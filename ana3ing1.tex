@@ -6,15 +6,30 @@
 \usepackage[ngerman]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[ansinew]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{tabularx}
 \usepackage[paper=a4paper,left=25mm,right=25mm,top=20mm,bottom=20mm]{geometry}
 \usepackage{nccmath}
 \usepackage{xcolor}
+\usepackage{ragged2e}
 \usepackage{graphics}
-
-\title{ITPDG Hausaufgabe 02}
-\author{Juan Pardo Martin\and Maria Ter-Minasyan\and Dana Kaczmarek\and Mtrn: 397882 \and Mtrn:  404730  \and Mtrn: 409252}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{mathtools}  
+\usepackage{float}
+\usepackage{physics}
+\usepackage[linkcolor=blu,colorlinks=false]{hyperref}
+\usepackage{cleveref}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+%Abstand zwischen Absätzen, Zeilenabstände
+\voffset26pt 
+\parskip6pt
+%\parindent1cm  %Rückt erste Zeile eines neuen Absatzes ein
+\usepackage{setspace}
+\onehalfspacing
+\title{Analysis III für Ingenieurwissenschaften}
+\author{Juan Pardo Martin (397882)\and Tuan Kiet Nguyen (404029)\and Leonardo Nerini (414193)}
 \let\*\cdot
 \let\-\rightarrow
 \let\_\Rightarrow
@@ -23,9 +38,42 @@
 \let\c\textcolor
 %\mathbb{R} 
 %\begin{align*}
+\titlehead
+{
+\begin{tabular}{ll}
+\begin{minipage}{0.5\textwidth}
+%\begin{figure}[H]
+% \raggedright
+ %\includegraphics[scale=0.04]{tu-logo}\\
+%\end{figure}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{figure}[H]
+\raggedleft
+%\includegraphics[scale=0.04]{tu-logo}\\
+\end{figure}
+\end{minipage}
+\end{tabular}\\
+\\
+  \small
+      {
+    Ana III Hausaufgabe\\
+    Tutor:??\\
+	SS 2021
+    }
 
+}
 \begin{document}
 
 \maketitle
-\author
+%\author
+
+\begin{section}{Aufgabe}%Aufgabe 1
+Stellen Sie die folgenden Terme komplexer Funktionen in der Form \(u(x, y)+iv(x, y)\) dar,
+wobei \(z = x + iy\) mit \(x, y \in \mathbb R\) eine komplexe Zahl und \(u, v : \mathbb R^2 \rightarrow \mathbb R\) reelle Funktionen
+sind. Geben Sie hierbei die Funktionsterme \(u(x, y)\) und \(v(x, y)\) explizit an.
+\begin{center}
+a) \(z(z − i)\), b) \(ze^z\)
+\end{center}
+\end{section}
 \end{document}

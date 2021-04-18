@@ -22,6 +22,21 @@
 \usepackage{cleveref}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
+\usepackage{microtype}  % Minature font tweaks
+
+% Common shortcuts
+\def\mbb#1{\mathbb{#1}}
+\def\mfk#1{\mathfrak{#1}}
+
+\def\bN{\mbb{N}}
+\def\bC{\mbb{C}}
+\def\bR{\mbb{R}}
+\def\bQ{\mbb{Q}}
+\def\bZ{\mbb{Z}}
+\newcommand{\func}[3]{#1\colon#2\to#3}
+\newcommand{\vfunc}[5]{\func{#1}{#2}{#3},\quad#4\longmapsto#5}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
 %Abstand zwischen Absätzen, Zeilenabstände
 \voffset26pt 
 \parskip6pt
@@ -73,7 +88,130 @@ Stellen Sie die folgenden Terme komplexer Funktionen in der Form \(u(x, y)+iv(x,
 wobei \(z = x + iy\) mit \(x, y \in \mathbb R\) eine komplexe Zahl und \(u, v : \mathbb R^2 \rightarrow \mathbb R\) reelle Funktionen
 sind. Geben Sie hierbei die Funktionsterme \(u(x, y)\) und \(v(x, y)\) explizit an.
 \begin{center}
-a) \(z(z − i)\), b) \(ze^z\)
+a) \(e^{-i z^2}\),    b) \(z\overline{z}^2+\overline{z}z^2\)
 \end{center}
+\begin{itemize}
+\item[a)]
+Wir ersetzen \(z=x+iy\), wobei \(x,y\in \mathbb R\)
+\[e^{-i (x+i y)^2}\]
+Wir multiplizieren die Exponente aus.
+\[e^{-i x^2+2 x y+i y^2}\]
+Wir klamern wir die imaginäre teil aus.
+\[e^{2 x y} e^{-i x^2+i y^2}\]
+Wir anwenden die Eulersche Identität
+\[e^{2 x y} \left(\cos \left(x^2-y^2\right)-i \sin \left(x^2-y^2\right)\right)\]
+\[\left(\underbrace{e^{2 x y} \cos \left(x^2-y^2\right)}_{u(x,y)}-i \underbrace{e^{2 x y}\sin \left(x^2-y^2\right)}_{v(x,y)}\right)\]
+\item[b)]
+\[z\overline{z}^2+\overline{z}z^2\]
+\[(x+i y) (x-i y)^2+(x+i y)^2 (x-i y)\]
+\[x^3-i x^2 y+x y^2-i y^3+x^3+i x^2 y+x y^2+i y^3\]
+\[\underbrace{2 x^3 + 2 x y^2}_{u(x,y)}+\underbrace{0}_{v(x,y)}\]
+\end{itemize}
 \end{section}
+\begin{section}{Aufgabe}%Aufgabe 2
+Konstruieren Sie eine auf ganz $\bC$ definierte Funktion $f$, die genau auf der Geraden \(\qty{z \in
+\mathbb C | \Re z = 2 \Im z}\) komplex differenzierbar ist 
+und an der Stelle \(2 + i\) den Wert 2 annimmt. Der Funktionsterm 
+$f(z)$ ist als Term in der Variablen $z$ zu schreiben.
+
+\[f(2+i)=2\]
+Wir können eine einfache Funktion finden. (oder?)
+%\[\vfunc{f}{\bC}{\bC}{z}{2}\]
+%zu einfach? oder muss exlplizit von z abhängen?
+\[\vfunc{f}{\bC}{\bC}{z}{z-i}\]
+\[\partial_x u = 1 = 1 = \partial_y v\]
+\[\partial_y u = 0 = 0 = - \partial_x v\]
+\end{section}
+\begin{section}{Aufgabe}%Aufgabe 3
+Gegeben ist die komplexe Funktion g mit
+\[h(z)=\begin{cases} 
+\frac{\Re\left(z^2\right)}{z} & \text{für } z\neq 0 \\
+ 0 & \text{für } z=0 \\
+   \end{cases}\]
+Zeigen Sie, dass die Funktion g im Punkt 0 die Cauchy-Riemann-Differentialgleichungen
+erfullt, aber nicht komplex-differenzierbar ist. 
+\[h(x+iy)=\begin{cases} 
+\frac{\Re\left((x+iy)^2\right)}{(x+iy)} & \text{für } z\neq 0 \\
+ 0 & \text{für } z=0 \\
+   \end{cases}\]
+
+\[h(x+iy)=\begin{cases} 
+\frac{\Re\left(x^2 + 2 i x y - y^2\right)}{(x+iy)} & \text{für } z\neq 0 \\
+ 0 & \text{für } z=0 \\
+   \end{cases}\]
+
+\[h(x+iy)=\begin{cases} 
+\frac{x^2 - y^2}{(x+iy)} & \text{für } z\neq 0 \\
+ 0 & \text{für } z=0 \\
+   \end{cases} \]
+
+\[h(x+iy)=\begin{cases} 
+\frac{(x^2 - y^2)(x-iy)}{(x^2+y^2)} & \text{für } z\neq 0 \\
+ 0 & \text{für } z=0 \\
+   \end{cases} \]
+
+\[u(x,y)=\begin{cases} 
+\frac{x(x^2 - y^2)}{(x^2+y^2)} & \text{für } 
+     \begin{psmallmatrix}x \\y \end{psmallmatrix}
+     \neq 
+     \begin{psmallmatrix}0\\0 \end{psmallmatrix}
+      \\
+ 0 & \text{für } 
+     \begin{psmallmatrix}x \\y \end{psmallmatrix}
+     =
+     \begin{psmallmatrix}0\\0 \end{psmallmatrix}
+     \\
+   \end{cases}\]
+   
+\[v(x,y)=\begin{cases} 
+-\frac{y(x^2 - y^2)}{(x^2+y^2)} & \text{für } 
+     \begin{psmallmatrix}x \\y \end{psmallmatrix}
+     \neq 
+     \begin{psmallmatrix}0\\0 \end{psmallmatrix}
+      \\
+ 0 & \text{für } 
+     \begin{psmallmatrix}x \\y \end{psmallmatrix}
+     =
+     \begin{psmallmatrix}0\\0 \end{psmallmatrix}
+     \\
+   \end{cases}\]
+Die Cauchy-Riemann bedingungen lauten.
+\end{section}
+\begin{align}
+\partial_x u &\overset{!}{=} \partial_y v \label{e}\\ 
+\partial_y u &\overset{!}{=} - \partial_x v \label{auf3bed2}
+\end{align}
+für \(\partial_x u\) im Punkt 0
+\[\partial_x u(x,0)=\lim_{h\rightarrow 0}\frac{u(h,0)-\overbrace{u(0,0)}^{0}}{h}=\frac{h^3}{h^3}=1\]
+\[\partial_y v(0,y)=\lim_{h\rightarrow 0}\frac{v(0,h)-\overbrace{v(0,0)}^{0}}{h}=\frac{h^3}{h^3}=1\]
+Somit \eqref{e} gilt.
+\[\partial_y u(0,y)=\lim_{h\rightarrow 0}\frac{\overbrace{u(0,h)}^0-\overbrace{u(0,0)}^{0}}{h}=0\]
+\[\partial_x v(0,y)=\lim_{h\rightarrow 0}\frac{\overbrace{v(h,0)}^0-\overbrace{v(0,0)}^{0}}{h}=0\]
+Daraus folgt \eqref{auf3bed2} stimmt auch
+Die Cauchy-Riemannsche bedingungen stimmen, aber es ist nicht hinreichend für Komplexe differenzierbarkeit, wir müssen zeigen dass die Abbildung
+\[f:\begin{pmatrix}x \\y \end{pmatrix}\mapsto \begin{pmatrix}u(x,y) \\v(x,y) \end{pmatrix}\]
+Reelle differenzierbar sein.
+Wir untersuchen die differenzierbarkeit an der stelle \(\begin{psmallmatrix}0\\0\end{psmallmatrix}\).
+Wir berechnen die Funktionalmatrize an der stelle \(\begin{psmallmatrix}0\\0\end{psmallmatrix}\)
+\[f'(0,0)=\begin{pmatrix}\partial_x u&\partial_y u\\\partial_x v&\partial_y v\end{pmatrix}=\begin{pmatrix}1&0\\0&1\end{pmatrix}\]
+Wenn
+\[\lim_{(\Delta x,\Delta y)\rightarrow(0,0)}\frac{\left|f(\Delta x,\Delta y)-f(0,0)-f'(0,0)\begin{psmallmatrix}\Delta x\\\Delta y\end{psmallmatrix}\right|}{\sqrt{(\Delta x)^2+(\Delta y)^2}}\]
+0 wäre, dann wäre es komplexe differenzierbar.
+\[\lim_{(\Delta x,\Delta y)\rightarrow(0,0)}\frac{\left|\begin{psmallmatrix}u(\Delta x,\Delta y)\\v(\Delta x,\Delta y)\end{psmallmatrix}-\overbrace{f(0,0)}^0-\begin{psmallmatrix}\Delta x\\\Delta y\end{psmallmatrix}\right|}{\sqrt{(\Delta x)^2+(\Delta y)^2}}=\lim_{(\Delta x,\Delta y)\rightarrow(0,0)}\frac{\left|\begin{psmallmatrix}\frac{(\Delta x)((\Delta x)^2 - (\Delta y)^2)}{((\Delta x)^2+(\Delta y)^2)}-\Delta x\\-\frac{(\Delta y)((\Delta x)^2 - (\Delta y)^2)}{((\Delta x)^2+(\Delta y)^2)}-\Delta y\end{psmallmatrix}\right|}{\sqrt{(\Delta x)^2+(\Delta y)^2}}\]
+%\left(\frac{(\Delta x)((\Delta x)^2 - (\Delta y)^2)}{((\Delta x)^2+(\Delta y)^2)}-\Delta x\right)^2
+%\left(-\frac{(\Delta y)((\Delta x)^2 - (\Delta y)^2)}{((\Delta x)^2+(\Delta y)^2)}-\Delta y\right)^2
+%\[=\lim_{(\Delta x,\Delta y)\rightarrow(0,0)}\sqrt{\frac{1}{(\Delta x)^2+(\Delta y)^2}}}\]
+\[=\lim_{(\Delta x,\Delta y)\rightarrow(0,0)}\sqrt{\frac{\left(\frac{(\Delta x)((\Delta x)^2 - (\Delta y)^2)}{((\Delta x)^2+(\Delta y)^2)}-\Delta x\right)^2+\left(-\frac{(\Delta y)((\Delta x)^2 - (\Delta y)^2)}{((\Delta x)^2+(\Delta y)^2)}-\Delta y\right)^2}{(\Delta x)^2+(\Delta y)^2}}\]
+\[=\lim_{(\Delta x,\Delta y)\rightarrow(0,0)}\sqrt{\frac{\left(-\frac{2 (\Delta x) (\Delta y)^2}{(\Delta x)^2+(\Delta y)^2}\right)^2+\left(-\frac{2 (\Delta x)^2 (\Delta y)}{(\Delta x)^2+(\Delta y)^2}\right)^2}{(\Delta x)^2+(\Delta y)^2}}\]
+\[=\lim_{(\Delta x,\Delta y)\rightarrow(0,0)}\sqrt{\frac{\left(\frac{2 (\Delta x) (\Delta y)^2}{(\Delta x)^2+(\Delta y)^2}\right)^2+\left(\frac{2 (\Delta x)^2 (\Delta y)}{(\Delta x)^2+(\Delta y)^2}\right)^2}{(\Delta x)^2+(\Delta y)^2}}\]
+\[=\lim_{(\Delta x,\Delta y)\rightarrow(0,0)}\sqrt{\frac{\left(2 (\Delta x) (\Delta y)^2\right)^2+\left(2 (\Delta x)^2 (\Delta y)\right)^2}{\left((\Delta x)^2+(\Delta y)^2\right)^3}}\]
+\[=\lim_{(\Delta x,\Delta y)\rightarrow(0,0)}2 \sqrt{\frac{\left((\Delta x) (\Delta y)^2\right)^2+\left((\Delta x)^2 (\Delta y)\right)^2}{\left((\Delta x)^2+(\Delta y)^2\right)^3}}\]
+\[=\lim_{k\rightarrow \infty }2 \sqrt{\frac{\left((\frac{1}{k}) (\frac{1}{k})^2\right)^2+\left((\frac{1}{k})^2 (\frac{1}{k})\right)^2}{\left((\frac{1}{k})^2+(\frac{1}{k})^2\right)^3}}\]
+\[=\lim_{k\rightarrow \infty }2 \sqrt{\frac{\left((\frac{1}{k})^3\right)^2+\left((\frac{1}{k})^3 \right)^2}{8(\frac{1}{k})^6}}\]
+\[=\lim_{k\rightarrow \infty } \sqrt{\frac{(\frac{1}{k})^6}{(\frac{1}{k})^6}}=\sqrt{1}=1\neq0\]
+Die Abbildung $f$ ist nicht Reelle differenzierbar an der Stelle \(\begin{psmallmatrix}0\\0\end{psmallmatrix}\)
+Daraus folgt, dass $h$ nicht Komplexe differenzierbar ist.
+
+
+
 \end{document}

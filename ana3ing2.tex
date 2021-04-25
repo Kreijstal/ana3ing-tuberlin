@@ -1,0 +1,199 @@
+\documentclass{scrartcl}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tabto}
+\usepackage{enumerate}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage[paper=a4paper,left=25mm,right=25mm,top=20mm,bottom=20mm]{geometry}
+\usepackage{nccmath}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+%\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{mathtools}  
+\usepackage{float}
+\usepackage{physics}
+\usepackage[linkcolor=blu,colorlinks=false]{hyperref}
+\usepackage{cleveref}
+\usepackage{breqn}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\usepackage{microtype}  % Minature font tweaks
+
+% Common shortcuts
+\def\mbb#1{\mathbb{#1}}
+\def\mfk#1{\mathfrak{#1}}
+
+\def\bN{\mbb{N}}
+\def\bC{\mbb{C}}
+\def\bR{\mbb{R}}
+\def\bQ{\mbb{Q}}
+\def\bZ{\mbb{Z}}
+\newcommand{\func}[3]{#1\colon#2\to#3}
+\newcommand{\vfunc}[5]{\func{#1}{#2}{#3},\quad#4\longmapsto#5}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+%Abstand zwischen Absätzen, Zeilenabstände
+\voffset26pt 
+\parskip6pt
+%\parindent1cm  %Rückt erste Zeile eines neuen Absatzes ein
+\usepackage{setspace}
+\onehalfspacing
+\title{Analysis III für Ingenieurwissenschaften}
+\author{Juan Pardo Martin (397882)\and Tuan Kiet Nguyen (404029)\and Leonardo Nerini (414193)}
+\let\*\cdot
+\let\-\rightarrow
+\let\_\Rightarrow
+\let\>\Leftrightarrow
+\definecolor{l}{rgb}{0.0, 0.5, 0.0}
+\let\c\textcolor
+%\mathbb{R} 
+%\begin{align*}
+\titlehead
+{
+\begin{tabular}{ll}
+\begin{minipage}{0.5\textwidth}
+%\begin{figure}[H]
+% \raggedright
+ %\includegraphics[scale=0.04]{tu-logo}\\
+%\end{figure}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{figure}[H]
+\raggedleft
+%\includegraphics[scale=0.04]{tu-logo}\\
+\end{figure}
+\end{minipage}
+\end{tabular}\\
+\\
+  \small
+      {
+    Ana III Hausaufgabe 2 woche\\
+    Tutor:??\\
+	SS 2021
+    }
+
+}
+\begin{document}
+
+\maketitle
+%\author
+
+\begin{section}{Aufgabe}%Aufgabe 1
+Beweisen Sie mit Hilfe der Definition der komplexen Potenz die in der Vorlesung angegebenen Formeln
+\begin{center}
+a) \((z^p)'=p z^{p-1}\),    b) \((a^z)'=a^z \log(a)\)
+\end{center}
+
+und geben Sie dabei an, für welche komplexen Werte von $z$, $p$ und $a$ diese Formeln
+sinnvoll sind.
+\begin{itemize}
+\item[a)]
+\[z^p=e^{p \log(z)}\]
+Wir wissen dass
+\[\log(z)'=\frac{\partial u}{\partial x}+i \frac{\partial v}{\partial x}=\frac{x-y}{r}=\frac{z \overline{z}}{z}=\frac{1}{z}\]
+und \[f(g(z))'=f'(g(z))g'(z)\]
+Also \[(e^{p \log(z)})'=e^{p \log(z)}\frac{p}{z}=p\frac{e^{p \log(z)}}{z}=p\frac{z^p}{z}=p z^{p-1}\]
+In diesem fall \(p\in \bC;z\in \mathbb G\subset \mathbb C\setminus\qty{0}\)
+\item[b)]
+\[a^z=e^{z \log(a)}\]
+und
+\[(e^{z \log(a)})'=e^{z \log(a)}\log(a)=a^z \log(a)\]
+In diesem fall \(z\in \bC;a\in \mathbb G\subset \mathbb C\setminus\qty{0}\)
+\end{itemize}
+\end{section}
+\begin{section}{Aufgabe}%Aufgabe 2
+Gegeben seien von einer analytischen Funktion \(f(z)\) die Eigenschaften \(f(i) = i\) sowie
+\[\Re f(x + iy) = y \sin x \sinh y + x \cos x \cosh y,\ x, y \in \bR.\]
+Bestimmen Sie diese Funktion \(f(z)\).
+
+
+Da $f$ analytisch ist, wissen wir dass:
+\[\Delta u(x,y)=\Delta v(x,y)=0\]
+Wir sagen
+\[u(x,y)=y \sin x \sinh y + x \cos x \cosh y\]
+\[\partial_x u=y \cos x \sinh y + \cosh y (\cos x-x \sin x )\]
+\[\partial_x^2 u=-y \sin x \sinh y + \cosh y (-\sin x-(\sin x+x \cos x) )\]
+\[\partial_y u=\sin x(\sinh y + y \cosh y)+x \cosh x \sinh y\]
+\[\partial_y^2 u=\sin x(\cosh y + (y \sinh y+\cosh y))+x \cosh x \cosh y\]
+\(\Delta u=0\), $u$ ist deshalb Harmonisch
+Sodass $f$ analytisch seien kann, dann $f$ muss überall in seine Definitionsbereich differenzierbar sein.
+Die C-R-DGL sollen erfüllt sein:
+\begin{align}
+\partial_x u &= \partial_y v = y \cos x \sinh y + \cosh y (\cos x-x \sin x )  \label{crdgl1}\\ 
+\partial_y u &= -\partial_x v = (\sin x(\sinh y + y \cosh y)+x \cosh x \sinh y) \label{crdgl2}
+\end{align}
+Da wir \(\partial_y v\) und \(\partial_x v\) haben, können wir nach Harmonizität in $v$ prüfen.
+\[\partial_y^2 v=\cos x(\sinh y +y \cosh y)+\sinh y (\cos x-x \sin x )\]
+\[\partial_x^2 v=-(\cos x(\sinh y + y \cosh y)+ \sinh y(\cos x-x \sin x ))\]
+\(\Delta v=0\), $v$ ist deshalb Harmonisch.
+Und jetzt müssen wir ein $v(x,y)$ finden sodass \eqref{crdgl1} und \eqref{crdgl2} gelten.
+Wir integrieren
+\[\int y e^y dy=e^y y -\int e^y dy = e^y y - e^y \]
+\[\int y e^{-y} dy=-e^{-y} y +\int e^{-y} dy = -e^{-y} y - e^{-y} \]
+Daraus folgt:
+\[\int y  \sinh y dy=\frac{1}{2} \int y(e^y-e^{-y}) dy=\frac{1}{2} (y(e^y+e^{-y})-e^y+e^{-y})=(y(\cosh y)-\sinh{y})\]
+Somit kann man rechnen:
+\begin{dmath*}
+v(x,y) = 
+\int \partial_y v dy=\int y \cos x \sinh y + \cosh y (\cos x-x \sin x ) dy =\cos x \int y  \sinh y dy + \sinh y (\cosh y (\cos x-x \sin x ) )
+=\cos x (y(\cosh y)-\sinh{y}) + \sinh y (\cos x-x \sin x ) + C(x)
+=\cos x (y\cosh y)-\sinh y (x \sin x ) + C(x)
+\end{dmath*}
+Wir leiten nach $x$ ab um $C(x)$ herauszufinden.
+\begin{dmath*}
+\partial_x v= -\sin(x)(y\cosh y)-\sinh y (\sin x+x\cos x)+C'(x)\overset{!}{=}
+-(\sin x(\sinh y + y \cosh y)+x \cosh x \sinh y)
+\end{dmath*}
+Dafür muss $C'(x)=0$ bzw Konstant sein.
+Wir evaluieren $v(x,y)$ an der stelle $(0,1)$
+\[v(0,1)= (\cosh 1)+C\]
+Wir nehmen $C=1-\cosh 1$
+Somit ist \[f(x+iy)=y \sin (x) \sinh (y)+x \cos (x) \cosh (y)+i (y \cos (x) \cosh (y)-x \sin (x) \sinh (y)+1-\cosh 1)\]
+\end{section}
+\begin{section}{Aufgabe}%Aufgabe 3
+Gegeben sei der Viertelkreisring $G$ mit
+\[G:=\qty{(x,y)\in\bR^2 |x,y>0 \land 0<\arctan\frac{y}{x}<\frac{\pi}2 \land 1<x^2+y^2<4}\]
+Finden Sie eine Funktion $\func{u}{\overline{G}}{\bR}$, die das Randwertproblem
+
+\begin{alignat*}{2}
+\Delta u(x,y)&=0 \hspace{2em}    & \text{für } (x,y)\in G\\
+u(x,0)&=0 \hspace{2em}   & \text{für } 1\leq x \leq 2\\
+u(2 \cos(t),2\sin(t))&=t \ln (2) \hspace{2em}   & \text{für } 0\leq t \leq \frac\pi 2\\
+u(0,y)&=\frac \pi 2 \ln y \hspace{2em}   & \text{für } 1\leq x \leq 2\\
+u(\cos(t),\sin(t))&=0 \hspace{2em}   & \text{für } 0\leq t \leq \frac\pi 2\\
+\end{alignat*}
+löst, indem Sie die {\em Methode der harmonischen Verpflanzung} mit der Verpflanzungsabbildung $f(z) = \log z$ verwenden.\\
+\\
+Wir wissen das (in $\overline G$).
+\[f(x+i y)=\ln(x+iy)=\log\sqrt{x^2+y^2}+i \arctan(\frac y x)\]
+Da $x\geq 0 \land y\geq 0$\\
+Wir können die Rände berechnen (in $\overline G$). (Mit eine Abbildung $\bC \rightarrow \bR^2$)
+\[(x,0)\rightarrow (\ln |x|,0)=(\ln x,0)\]
+\[(0,y)\rightarrow (\ln y,\frac{\pi}{2})\] 
+\[(a \cos(t),a \sin(t))\rightarrow (\ln |a|,t)\]
+und somit folgt:
+\begin{alignat*}{3}
+u(x,0)&=0  &=&U(\ln x,0)\\
+u(0,y)&=\frac \pi 2 \ln y  &=&U(\ln y,\frac \pi 2)\\
+u(\cos(t),\sin(t)) &=0 &=&U(0,t)\\
+u(2\cos(t),2\sin(t))&=t \ln 2  &=&U(\ln 2,t)
+\end{alignat*}
+Wir schreiben die übersetzes Randwertproblem.
+\begin{alignat*}{3}
+U(\xi,0)&=0 \hspace{2em}   & \text{für }& 0\leq \xi \leq \ln 2\\
+U(0,\eta)&=0 \hspace{2em}   & \text{für }& 0\leq \eta \leq \frac \pi 2\\
+U(\ln 2,\eta)&=\eta \ln 2 \hspace{2em}   & \text{für }& 0\leq \eta \leq \frac \pi 2\\
+U(\xi,\frac \pi 2)&=\frac \pi 2 \xi \hspace{2em}   & \text{für }& 0\leq \xi \leq \ln 2
+\end{alignat*}
+Eine mögliche abbildung könnte sein:
+\[U(\xi,\eta)=\xi \eta \]
+Daraus folgt
+\[u(x,y)=U(\ln\sqrt{x^2+y^2},\arctan(\frac y x))=\ln\sqrt{x^2+y^2}\arctan(\frac y x)\]
+\end{section}
+\end{document}

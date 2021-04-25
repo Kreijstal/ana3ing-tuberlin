@@ -72,8 +72,8 @@
 \\
   \small
       {
-    Ana III Hausaufgabe 1 woche\\
-    Tutor:??\\
+    Ana III Hausaufgabe, 1 Woche\\
+    Tutor:  David Sering  \\
 	SS 2021
     }
 
@@ -101,6 +101,7 @@ Wir klamern wir die imaginäre teil aus.
 Wir anwenden die Eulersche Identität
 \[e^{2 x y} \left(\cos \left(x^2-y^2\right)-i \sin \left(x^2-y^2\right)\right)\]
 \[\left(\underbrace{e^{2 x y} \cos \left(x^2-y^2\right)}_{u(x,y)}-i \underbrace{e^{2 x y}\sin \left(x^2-y^2\right)}_{v(x,y)}\right)\]
+\newpage
 \item[b)]
 \[z\overline{z}^2+\overline{z}z^2\]
 \[(x+i y) (x-i y)^2+(x+i y)^2 (x-i y)\]
@@ -211,7 +212,13 @@ Wenn
 \[=\lim_{k\rightarrow \infty } \sqrt{\frac{(\frac{1}{k})^6}{(\frac{1}{k})^6}}=\sqrt{1}=1\neq0\]
 Die Abbildung $f$ ist nicht Reelle differenzierbar an der Stelle \(\begin{psmallmatrix}0\\0\end{psmallmatrix}\)
 Daraus folgt, dass $h$ nicht Komplexe differenzierbar ist.
-
-
+Alternativ könnte man mit die Komplexen Differenzialquotient von $h$ an der stelle 0.
+\[\lim_{\Delta z\rightarrow 0}\frac{h(0+\Delta z)+h(0)}{\Delta z}=\lim_{\Delta z\rightarrow 0}\frac{\Re((\Delta z)^2)}{(\Delta z)^2}\]
+Wir nehmen 2 verschiedene 0 Folgen.
+\(\Delta z=\lim_{k\rightarrow\infty}\frac{1}k\)
+\[\lim_{k\rightarrow\infty}=\lim_{\Delta z\rightarrow 0}\frac{\Re((\frac 1 k)^2)}{(\frac 1 k)^2}=1\]
+und \(\Delta z=\lim_{k\rightarrow\infty}\frac{1+i}k\)
+\[\lim_{k\rightarrow\infty}=\lim_{\Delta z\rightarrow 0}\frac{\Re((\frac {1+i} k)^2)}{(\frac {1+i} k)^2}=0\]
+Der Grenzwert ist nicht definiert und somit ist $h$ nicht komplex differenzierbar an der Stelle 0.
 
 \end{document}

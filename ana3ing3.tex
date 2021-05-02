@@ -1,0 +1,129 @@
+\documentclass{scrartcl}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tabto}
+\usepackage{enumerate}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage[paper=a4paper,left=25mm,right=25mm,top=20mm,bottom=20mm]{geometry}
+\usepackage{nccmath}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+%\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{mathtools}  
+\usepackage{float}
+\usepackage{physics}
+%\usepackage[linkcolor=blu,colorlinks=false]{hyperref}
+\usepackage{cleveref}
+%\usepackage{breqn}
+\usepackage{cfr-lm}
+\usepackage{newtxmath}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\usepackage{microtype}  % Minature font tweaks
+%\usepackage{cmathbb}
+\DeclareSymbolFont{eulerletters}{U}{zeur}{b}{n}
+\DeclareMathSymbol{\imag}{\mathord}{eulerletters}{`i}
+% Common shortcuts
+\def\mbb#1{\mathbb{#1}}
+\def\mfk#1{\mathfrak{#1}}
+%\def\imag{\mathsf{i}}
+\def\bN{\mbb{N}}
+\def\bC{\mbb{C}}
+\def\bR{\mbb{R}}
+\def\bQ{\mbb{Q}}
+\def\bZ{\mbb{Z}}
+\newcommand{\func}[3]{#1\colon#2\to#3}
+\newcommand{\vfunc}[5]{\func{#1}{#2}{#3},\quad#4\longmapsto#5}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+%Abstand zwischen Absätzen, Zeilenabstände
+\voffset26pt 
+\parskip6pt
+%\parindent1cm  %Rückt erste Zeile eines neuen Absatzes ein
+\usepackage{setspace}
+\onehalfspacing
+\title{Analysis III für Ingenieurwissenschaften}
+\author{Juan Pardo Martin (397882)\and Tuan Kiet Nguyen (404029)\and Leonardo Nerini (414193)}
+\let\*\cdot
+\let\-\rightarrow
+\let\_\Rightarrow
+\let\>\Leftrightarrow
+\definecolor{l}{rgb}{0.0, 0.5, 0.0}
+\let\c\textcolor
+%\mathbb{R} 
+%\begin{align*}
+\titlehead
+{
+\begin{tabular}{ll}
+\begin{minipage}{0.5\textwidth}
+%\begin{figure}[H]
+% \raggedright
+ %\includegraphics[scale=0.04]{tu-logo}\\
+%\end{figure}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{figure}[H]
+\raggedleft
+%\includegraphics[scale=0.04]{tu-logo}\\
+\end{figure}
+\end{minipage}
+\end{tabular}\\
+\\
+  \small
+      {
+    Ana III Hausaufgabe, 3 Woche\\
+    Tutor:  David Sering  \\
+	SS 2021
+    }
+
+
+}
+\begin{document}
+
+\maketitle
+%\author
+
+\begin{section}{Aufgabe}%Aufgabe 1
+Es seien die Kurven \(\gamma_1 : t \mapsto t + \imag(\sqrt 3)t, 0 < t < \infty\) 
+und 
+\(\gamma_2 : t \mapsto \cos t + \imag\sqrt 3 \sin t, 0 \leq t < \pi\)
+sowie die Abbildung \(\vfunc{f}{\bC}{\bC}{z}{z^2-z\sqrt 2}\)
+ gegeben.
+\begin{itemize}
+\item[a)]
+Berechnen Sie den Schnittpunkt der Kurven $\gamma_1$ und $\gamma_2$ und den Schnittwinkel.\\
+Wir finden die Gemeinsames punkt in dem wir das Problem im $\bR^2$ umstellen.
+\[\vec{\upgamma}_1(a)=\begin{pmatrix}\Re(\gamma_1(a))\\\Im(\gamma_1(a))\end{pmatrix},\quad a\in \bR\]
+\item[b)]
+Ermitteln Sie Schnittpunkt und Schnittwinkel der Bildkurven $f(\gamma_1)$ und $f(\gamma_2)$.
+\end{itemize}
+
+
+\end{section}
+\begin{section}{Aufgabe}%Aufgabe 2
+Ermitteln Sie fur die Möbius-Transformationen $h_1$ und $h_2$ mit:
+\[h_1(z)=\frac{2z-1}{3z-2},\quad h_2(z)=\frac{z-1}{-2z+3}\]
+die Komposition $h_1 \circ h_2$ und die inversen Transformationen $h_1^{-1}$ und $h_2^{-1}$.
+
+\end{section}
+\begin{section}{Aufgabe}%Aufgabe 3
+Eine Möbius-Transformation $T$ werde durch die Angaben
+\[f(1)=1,\quad f(\imag)=1+\imag,\quad f(-1+\imag)=2+2\imag\]
+beschrieben.
+\begin{itemize}
+\item[a)]
+Bestimmen Sie den Term $f(z)$ für $z \in \bC$.
+\item[b)]
+%\setmathfont{Latin Modern Math}
+
+Bestimmen Sie von der offenen Halbgeraden $\gamma : t \mapsto t \imag, 0 < t < \infty$ rechnerisch
+das Bild $f(\gamma)$ und beschreiben Sie es als geometrische Figur.
+\end{itemize}
+\end{section}
+\end{document}

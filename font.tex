@@ -1,0 +1,85 @@
+%\documentclass{article}
+%\usepackage{fonttable}
+%\begin{document}
+%\xfonttable{U}{txexa}{m}{it}
+%\xfonttable{OMX}{\rmdefaultB}{m}{n}
+%\end{document}
+
+\documentclass[varwidth]{standalone}
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\usepackage{microtype}
+
+\defaultfontfeatures{ Scale = MatchUppercase }
+
+\setmainfont{Latin Modern Roman}[
+  Scale = 1.0 ,
+  Ligatures = {Common, Rare, TeX} ,
+  UprightFont = {Latin Modern Roman} ,
+  UprightFeatures = {
+    Ligatures = Discretionary ,
+    SmallCapsFeatures = { Ligatures = ResetAll } ,
+    SmallCapsFont = {lmromancaps10-regular.otf}
+  } ,
+  BoldFeatures = {
+    Ligatures = Discretionary ,
+    SmallCapsFeatures = {Letters = SmallCaps } ,
+    SmallCapsFont = {CMU Serif Bold}
+  } ,
+  ItalicFeatures = {
+    Ligatures = Discretionary ,
+    SmallCapsFeatures = { Ligatures = ResetAll } ,
+    SmallCapsFont = lmromancaps10-oblique.otf
+  } ,
+  BoldItalicFeatures = {
+    Ligatures = Discretionary ,
+    SmallCapsFeatures = { % Ligatures = ResetAll ,
+                          Letters = SmallCaps } ,
+    SmallCapsFont = cmunbl.ttf
+  } ,
+  SlantedFont = {Latin Modern Roman Slanted} ,
+  SlantedFeatures = {
+    Ligatures = Discretionary ,
+    SmallCapsFeatures = { Ligatures = ResetAll } ,
+    SmallCapsFont = lmromancaps10-oblique.otf
+  } ,
+  BoldSlantedFont = lmromanslant10-bold.otf ,
+  BoldSlantedFeatures = {
+    Ligatures = Discretionary ,
+    SmallCapsFeatures = { % Ligatures = ResetAll ,
+                          Letters = SmallCaps } ,
+    SmallCapsFont = cmunbl.ttf
+  } ,
+  FontFace = {sb}{n}{
+    Font = {Latin Modern Roman Demi} ,
+    Ligatures = Discretionary } ,
+  FontFace = {sb}{sl}{
+    Font = lmromandemi10-oblique.otf ,
+    Ligatures = Discretionary } ,
+  FontFace = {sb}{it}{
+    Font = lmromandemi10-oblique.otf ,
+    Ligatures = Discretionary } ,
+  FontFace = {bc}{n}{CMU Serif Bold Non-Extended} ,
+  FontFace = {m}{ui}{Latin Modern Roman Unslanted}
+]
+
+\setmathfont{Latin Modern Math}
+\setmathfont[range=up]{Latin Modern Roman Unslanted}
+
+\DeclareRobustCommand\sbseries{\fontseries{sb}\selectfont}
+\DeclareTextFontCommand{\textsb}{\sbseries}
+\DeclareRobustCommand\uishape{\fontshape{ui}\selectfont}
+\DeclareTextFontCommand{\textui}{\uishape}
+
+\begin{document}
+  \begin{minipage}{10cm}
+
+\textrm{
+Latin Modern Roman \textit{Italic} \textsl{Slanted} \textui{Upright-Italic}
+\textsb{Demibold \textit{Oblique}}
+\textbf{Bold \textit{Italic} \textsl{Slanted}} {\fontseries{bc}\selectfont Non-extended}
+\textsc{Small Caps \textit{Italic} \textsl{Slanted} \textbf{Bold \textit{Italic} \textsl{Slanted}}}
+}
+\[ \symup{e}^{\symup{i}x} = \cos x + \symup{i} \sin x \implies \symup{e}^{\symup{i}\muppi} + 1 = 0 \]
+  \end{minipage}
+\end{document}

@@ -128,6 +128,52 @@ für $\schnt{\gamma_1}{\gamma_2}{2}$ folgt analog:
 \item[b)]
 Ermitteln Sie Schnittpunkt und Schnittwinkel der Bildkurven $f(\gamma_1)$ und $f(\gamma_2)$.\\
 Die Schnittpunkt der Bildkurven von $f(\gamma_1)$ und $f(\gamma_2)$ ist gleich der Bild der schnittpunkt der Kurven, d.h
+\[\schnt{f(\gamma_1)}{f(\gamma_2)}{i}=f(\schnt{\gamma_1}{\gamma_2}{i}),\quad i\in\qty{1,2}\]
+Berechnung:
+\[\widetilde{P}_{f(\gamma_1),f(\gamma_2),1}=f\left(\frac{\sqrt{2}}{2}+\imag\left(\frac{\sqrt{6}}{2}\right)\right)=\left(\frac{\sqrt{2}}{2}+\imag\left(\frac{\sqrt{6}}{2}\right)\right)^2-\left(\frac{\sqrt{2}}{2}+\imag\left(\frac{\sqrt{6}}{2}\right)\right)\sqrt{2}\]
+\[=-1+\imag \sqrt{3}-1 - \imag \sqrt(3)=-2\]
+\[\schnt{f(\gamma_1)}{f(\gamma_2)}{1}=\begin{pmatrix}2\\0\end{pmatrix}\]
+und
+\[\widetilde{P}_{f(\gamma_1),f(\gamma_2),2}
+=f\left(-\frac{\sqrt{2}}{2}-\imag\left(\frac{\sqrt{6}}{2}\right)\right)
+=\left(\frac{\sqrt{2}}{2}+\imag\left(\frac{\sqrt{6}}{2}\right)\right)^2+\left(\frac{\sqrt{2}}{2}+\imag\left(\frac{\sqrt{6}}{2}\right)\right)\sqrt{2}\]
+\[=-1+\imag \sqrt{3}+1 + \imag \sqrt(3)=2 \imag \sqrt 3\]
+\[\schnt{f(\gamma_1)}{f(\gamma_2)}{2}=\begin{pmatrix}0\\2\sqrt 3\end{pmatrix}\]
+\newcommand{\f}{\vec{\text{\fontshape{ui}\selectfont f}}}
+Um die Schnittwinkel zu berechnen liniearizieren wir auch $\f(\vec{\upgamma}_i(t_i)), i \in \qty{1,2}$
+
+Es gilt: \[\frac{\partial}{\partial t_i}\left(\f(\vec{\upgamma}_i(t_i))\right)=\dfrac{\partial \f}{\partial \vec{\upgamma_i}}\dfrac{\partial \vec{\upgamma_i}}{\partial t_i}\]
+\(\dfrac{\partial \vec{\upgamma_i}}{\partial t_i}\) sind die Linearisierungen von $\vec{\upgamma_i}$, wir haben diese schon berechnet.
+\[\dfrac{\partial \f}{\partial \vec{\upgamma_i}}=
+\begin{pmatrix}
+    \dfrac{\partial}{\partial \Re \gamma_i}\Re f&& \dfrac{\partial}{\partial \Im \gamma_i}\Re f\\
+    \dfrac{\partial}{\partial \Re \gamma_i}\Im f&& \dfrac{\partial}{\partial \Im \gamma_i}\Im f
+\end{pmatrix}\]
+Also, mit \(x=\Re \gamma_i\) und \(y=\Im \gamma_i\)
+\[f(z)=f(x+\imag y)
+=(x+\imag y)^2-\sqrt{2} (x+\imag y)
+=x^2+2 \imag x y-\sqrt{2} x-y^2-\imag \sqrt{2} y
+=\underbrace{x^2-\sqrt{2} x-y^2}_{\Re f}
++\imag\underbrace{\left(2 x y-\sqrt{2} y\right)}_{\Im f}\]
+Daraus folgt\[\frac{\partial \f}{\partial \vec{\upgamma_i}}=
+\begin{pmatrix}
+    2\Re \gamma_i -\sqrt{2}&& -2\Im \gamma_i\\
+    2\Im \gamma_i&& 2\Re \gamma_i -\sqrt{2}
+\end{pmatrix}\]
+für \(\gamma_1\):
+\[\frac{\partial \f}{\partial \vec{\upgamma_1}}\frac{\partial \vec{\upgamma_1}}{\partial a}=
+\begin{pmatrix}
+    2\Re \gamma_1 -\sqrt{2}&& -2\Im \gamma_1\\
+    2\Im \gamma_1&& 2\Re \gamma_1 -\sqrt{2}
+\end{pmatrix}
+\cdot\begin{pmatrix}1\\1\sqrt{3}\end{pmatrix}
+=
+\begin{pmatrix}
+    2\Re \gamma_1 -\sqrt{2}&& -2\Im \gamma_1\\
+    2\Im \gamma_1&& 2\Re \gamma_1 -\sqrt{2}
+\end{pmatrix}
+\cdot\begin{pmatrix}1\\1\sqrt{3}\end{pmatrix}
+\]
 
 \end{itemize}
 

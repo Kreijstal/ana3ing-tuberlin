@@ -30,7 +30,7 @@
 %\DeclareSymbolFont{eulerletters}{U}{zeur}{b}{n}
 %\DeclareSymbolFont{cmrot1italics}{OT1}{cmr}{m}{it}
 %\DeclareMathSymbol{\imag}{\mathord}{eulerletters}{`i}
-\DeclareMathSymbol{\imag}{\mathord}{cmrot1italics}{`i}
+%\DeclareMathSymbol{\imag}{\mathord}{cmrot1italics}{`i}
 \DeclareSymbolFont{uiletters}{OT1}{cmr}{m}{ui}
 \DeclareMathSymbol{\imag}{\mathalpha}{uiletters}{`i}
 % Common shortcuts
@@ -107,9 +107,28 @@ Wir finden die Gemeinsames punkt in dem wir das Problem im $\bR^2$ umstellen.
 =\begin{pmatrix}\cos b\\\sin(b)\sqrt{3}\end{pmatrix}}\]
 Wir bauen die folgendes Gleichung System:
 \[\begin{pmatrix}a\\a\sqrt{3}\end{pmatrix}=\begin{pmatrix}\cos(b)\\\sin(b)\sqrt{3}\end{pmatrix}\implies \cos(b)=\sin(b)\implies b_1=\frac{\pi}{4},\quad b_2=\pi+\frac{\pi}{4}\]
+Wir haben 2 Schnittpunkten:
+\newcommand{\schnt}[3]{P_{#1,#2,#3}}
+\[\schnt{\gamma_1}{\gamma_2}{1}=\begin{pmatrix}\frac{\sqrt{2}}{2}\\\frac{\sqrt{2}}{2} \sqrt{3}\end{pmatrix},\quad \schnt{\gamma_1}{\gamma_2}{2}=-\schnt{\gamma_1}{\gamma_2}{1}\]
+Wir berechnen die schnittwinkel zwischen $\gamma_1$ und $\gamma_2$, dafür linearisieren die Funktionen an der stelle $\schnt{\gamma_1}{\gamma_2}{1}$ und $\schnt{\gamma_1}{\gamma_2}{2}$:\\
+\[\vec{\upgamma_1}'(a)=\begin{pmatrix}1\\\sqrt{3}\end{pmatrix}\]
+\[\vec{\upgamma_2}'(b)=\begin{pmatrix}-\sin(b)\\\cos(b)\sqrt{3}\end{pmatrix}\]
+für $\schnt{\gamma_1}{\gamma_2}{1}$:
+\[\phi_1=\arccos(\frac{\begin{psmallmatrix}1\\\sqrt{3}\end{psmallmatrix}\cdot \begin{psmallmatrix}-\sin(b_1)\\\cos(b_1)\sqrt{3}\end{psmallmatrix}}{\left|\begin{psmallmatrix}1\\\sqrt{3}\end{psmallmatrix}\right|\left|\begin{psmallmatrix}-\sin(b_1)\\\cos(b_1)\sqrt{3}\end{psmallmatrix}\right|})
+=\arccos(\frac{-\sin(b_1)+3\cos(b_1)}{\sqrt{1+3} \sqrt{3 \cos[2](b_1)+\sin[2](b_1)}})\]
+\[=\arccos(\frac{-\frac{\sqrt{2}}{2}+3\frac{\sqrt{2}}{2}}{\sqrt{4} \sqrt{3 (\frac{\sqrt{2}}{2})^2+(\frac{\sqrt{2}}{2})^2}})=
+\arccos(\frac{2\frac{\sqrt{2}}{2}}{2 \sqrt{3 \frac{1}{2}+\frac{1}{2}}})
+=\arccos(\frac{\sqrt{2}}{2 \sqrt{4\frac{1}{2}}})
+=\arccos(\frac{1}{2})=\frac{\pi}{3}\]
+für $\schnt{\gamma_1}{\gamma_2}{2}$ folgt analog:
+\[\phi_2=\arccos(\frac{-\sin(b_2)+3\cos(b_2)}{\sqrt{1+3} \sqrt{3 \cos[2](b_2)+\sin[2](b_2)}})
+=\arccos(\frac{\frac{\sqrt{2}}{2}-3\frac{\sqrt{2}}{2}}{\sqrt{4} \sqrt{3 (\frac{\sqrt{2}}{2})^2+(\frac{\sqrt{2}}{2})^2}})
+=\arccos(-\frac{1}{2})=\frac{2\pi}{3}\]
 
 \item[b)]
-Ermitteln Sie Schnittpunkt und Schnittwinkel der Bildkurven $f(\gamma_1)$ und $f(\gamma_2)$.
+Ermitteln Sie Schnittpunkt und Schnittwinkel der Bildkurven $f(\gamma_1)$ und $f(\gamma_2)$.\\
+Die Schnittpunkt der Bildkurven von $f(\gamma_1)$ und $f(\gamma_2)$ ist gleich der Bild der schnittpunkt der Kurven, d.h
+
 \end{itemize}
 
 

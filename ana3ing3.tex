@@ -169,10 +169,40 @@ für \(\gamma_1\):
 \cdot\begin{pmatrix}1\\1\sqrt{3}\end{pmatrix}
 =
 \begin{pmatrix}
-    2\Re \gamma_1 -\sqrt{2}&& -2\Im \gamma_1\\
-    2\Im \gamma_1&& 2\Re \gamma_1 -\sqrt{2}
+    2a -\sqrt{2}&& -2a\sqrt{3}\\
+    2a\sqrt{3}&& 2a -\sqrt{2}
 \end{pmatrix}
-\cdot\begin{pmatrix}1\\1\sqrt{3}\end{pmatrix}
+\cdot\begin{pmatrix}1\\\sqrt{3}\end{pmatrix}
+=\begin{pmatrix}
+    2a-\sqrt{2}-6a\\
+    2a\sqrt{3}+\sqrt{3}(2a -\sqrt{2})
+\end{pmatrix}
+=\begin{pmatrix}
+    -\sqrt{2}-4a\\
+    4a\sqrt{3}-\sqrt{6}
+\end{pmatrix}
+\]
+für \(\gamma_2\):
+\[\frac{\partial \f}{\partial \vec{\upgamma_2}}\frac{\partial \vec{\upgamma_2}}{\partial b}=
+\begin{pmatrix}
+    2\Re \gamma_2 -\sqrt{2}&& -2\Im \gamma_2\\
+    2\Im \gamma_2&& 2\Re \gamma_2 -\sqrt{2}
+\end{pmatrix}
+\cdot\begin{pmatrix}-\sin{b}\\\cos{b}\sqrt{3}\end{pmatrix}
+=
+\begin{pmatrix}
+    2\cos{b} -\sqrt{2}&& -\sin{b}\sqrt{3}\\
+    2\sin{b}\sqrt{3}&& 2\cos{b} -\sqrt{2}
+\end{pmatrix}
+\cdot\begin{pmatrix}-\sin{b}\\\cos{b}\sqrt{3}\end{pmatrix}
+=\begin{pmatrix}
+    2a-\sqrt{2}-6a\\
+    2a\sqrt{3}+\sqrt{3}(2a -\sqrt{2})
+\end{pmatrix}
+=\begin{pmatrix}
+    -\sqrt{2}-4a\\
+    4a\sqrt{3}-\sqrt{6}
+\end{pmatrix}
 \]
 
 \end{itemize}

@@ -27,8 +27,12 @@
 \renewcommand{\footrulewidth}{0.5pt}
 \usepackage{microtype}  % Minature font tweaks
 %\usepackage{cmathbb}
-\DeclareSymbolFont{eulerletters}{U}{zeur}{b}{n}
-\DeclareMathSymbol{\imag}{\mathord}{eulerletters}{`i}
+%\DeclareSymbolFont{eulerletters}{U}{zeur}{b}{n}
+%\DeclareSymbolFont{cmrot1italics}{OT1}{cmr}{m}{it}
+%\DeclareMathSymbol{\imag}{\mathord}{eulerletters}{`i}
+\DeclareMathSymbol{\imag}{\mathord}{cmrot1italics}{`i}
+\DeclareSymbolFont{uiletters}{OT1}{cmr}{m}{ui}
+\DeclareMathSymbol{\imag}{\mathalpha}{uiletters}{`i}
 % Common shortcuts
 \def\mbb#1{\mathbb{#1}}
 \def\mfk#1{\mathfrak{#1}}
@@ -85,10 +89,8 @@
 
 }
 \begin{document}
-
 \maketitle
 %\author
-
 \begin{section}{Aufgabe}%Aufgabe 1
 Es seien die Kurven \(\gamma_1 : t \mapsto t + \imag(\sqrt 3)t, 0 < t < \infty\) 
 und 
@@ -99,7 +101,13 @@ sowie die Abbildung \(\vfunc{f}{\bC}{\bC}{z}{z^2-z\sqrt 2}\)
 \item[a)]
 Berechnen Sie den Schnittpunkt der Kurven $\gamma_1$ und $\gamma_2$ und den Schnittwinkel.\\
 Wir finden die Gemeinsames punkt in dem wir das Problem im $\bR^2$ umstellen.
-\[\vec{\upgamma}_1(a)=\begin{pmatrix}\Re(\gamma_1(a))\\\Im(\gamma_1(a))\end{pmatrix},\quad a\in \bR\]
+\[\vfunc{\vec{\upgamma}_1}{\bR}{\bR^2}{a}{\begin{pmatrix}\Re(\gamma_1(a))\\\Im(\gamma_1(a))\end{pmatrix}
+=\begin{pmatrix}a\\a\sqrt{3}\end{pmatrix}}\]
+\[\vfunc{\vec{\upgamma}_2}{\bR}{\bR^2}{b}{\begin{pmatrix}\Re(\gamma_2(b))\\\Im(\gamma_2(b))\end{pmatrix}
+=\begin{pmatrix}\cos b\\\sin(b)\sqrt{3}\end{pmatrix}}\]
+Wir bauen die folgendes Gleichung System:
+\[\begin{pmatrix}a\\a\sqrt{3}\end{pmatrix}=\begin{pmatrix}\cos(b)\\\sin(b)\sqrt{3}\end{pmatrix}\implies \cos(b)=\sin(b)\implies b_1=\frac{\pi}{4},\quad b_2=\pi+\frac{\pi}{4}\]
+
 \item[b)]
 Ermitteln Sie Schnittpunkt und Schnittwinkel der Bildkurven $f(\gamma_1)$ und $f(\gamma_2)$.
 \end{itemize}

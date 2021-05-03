@@ -18,11 +18,12 @@
 \usepackage{mathtools}  
 \usepackage{float}
 \usepackage{physics}
-%\usepackage[linkcolor=blu,colorlinks=false]{hyperref}
-\usepackage{cleveref}
+\usepackage[linkcolor=blu,colorlinks=false]{hyperref}
+
 %\usepackage{breqn}
 \usepackage{cfr-lm}
 \usepackage{newtxmath}
+\usepackage{cleveref}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
 \usepackage{microtype}  % Minature font tweaks
@@ -108,42 +109,45 @@ Wir finden die Gemeinsames punkt in dem wir das Problem im $\bR^2$ umstellen.
 Wir bauen die folgendes Gleichung System:
 \[\begin{pmatrix}a\\a\sqrt{3}\end{pmatrix}=\begin{pmatrix}\cos(b)\\\sin(b)\sqrt{3}\end{pmatrix}
 \implies a=\cos(b)=\sin(b)\implies b_1=\frac{\pi}{4},\quad b_2=\pi+\frac{\pi}{4}\]
-Wir wurden 2 Schnittpunkten haben, jedocht fällt 1 raus, da $0 \leq b < \pi$, also, wir haben nur 1 schnittpunkt:
-\newcommand{\schnt}[3]{P_{#1,#2,#3}}
-\[\schnt{\gamma_1}{\gamma_2}=\begin{pmatrix}\frac{\sqrt{2}}{2}\\\frac{\sqrt{2}}{2} \sqrt{3}\end{pmatrix},\quad \schnt{\gamma_1}{\gamma_2}{2}=-\schnt{\gamma_1}{\gamma_2}{1}\]
+%fuck Ich habe die 2 schnittpunkt auch berechnet weil es mir spät ausgefallen ist, die Rechnung wird kommentiert
+Wir wurden 2 Schnittpunkten haben, jedoch fällt 1 raus, da $0 \leq b < \pi$, also, wir haben nur 1 schnittpunkt:
+\newcommand{\schnt}[3]{#3_{#1,#2}}
+\[\schnt{\gamma_1}{\gamma_2}{P}=\begin{pmatrix}\frac{\sqrt{2}}{2}\\\frac{\sqrt{2}}{2} \sqrt{3}\end{pmatrix}%,\quad \schnt{\gamma_1}{\gamma_2}{2}=-\schnt{\gamma_1}{\gamma_2}{1}
+\]
 Wir berechnen die schnittwinkel zwischen $\gamma_1$ und $\gamma_2$, dafür linearisieren die Funktionen an der stelle $\schnt{\gamma_1}{\gamma_2}{1}$ und $\schnt{\gamma_1}{\gamma_2}{2}$:\\
 \[\vec{\upgamma_1}'(a)=\begin{pmatrix}1\\\sqrt{3}\end{pmatrix}\]
 \[\vec{\upgamma_2}'(b)=\begin{pmatrix}-\sin(b)\\\cos(b)\sqrt{3}\end{pmatrix}\]
-für $\schnt{\gamma_1}{\gamma_2}{1}$:
+für $\schnt{\gamma_1}{\gamma_2}{P}$:
 \[\phi_1=\arccos(\frac{\begin{psmallmatrix}1\\\sqrt{3}\end{psmallmatrix}\cdot \begin{psmallmatrix}-\sin(b_1)\\\cos(b_1)\sqrt{3}\end{psmallmatrix}}{\left|\begin{psmallmatrix}1\\\sqrt{3}\end{psmallmatrix}\right|\left|\begin{psmallmatrix}-\sin(b_1)\\\cos(b_1)\sqrt{3}\end{psmallmatrix}\right|})
 =\arccos(\frac{-\sin(b_1)+3\cos(b_1)}{\sqrt{1+3} \sqrt{3 \cos[2](b_1)+\sin[2](b_1)}})\]
 \[=\arccos(\frac{-\frac{\sqrt{2}}{2}+3\frac{\sqrt{2}}{2}}{\sqrt{4} \sqrt{3 (\frac{\sqrt{2}}{2})^2+(\frac{\sqrt{2}}{2})^2}})=
 \arccos(\frac{2\frac{\sqrt{2}}{2}}{2 \sqrt{3 \frac{1}{2}+\frac{1}{2}}})
 =\arccos(\frac{\sqrt{2}}{2 \sqrt{4\frac{1}{2}}})
 =\arccos(\frac{1}{2})=\frac{\pi}{3}\]
-für $\schnt{\gamma_1}{\gamma_2}{2}$ folgt analog:
-\[\phi_2=\arccos(\frac{-\sin(b_2)+3\cos(b_2)}{\sqrt{1+3} \sqrt{3 \cos[2](b_2)+\sin[2](b_2)}})
-=\arccos(\frac{\frac{\sqrt{2}}{2}-3\frac{\sqrt{2}}{2}}{\sqrt{4} \sqrt{3 (\frac{\sqrt{2}}{2})^2+(\frac{\sqrt{2}}{2})^2}})
-=\arccos(-\frac{1}{2})=\frac{2\pi}{3}\]
+%für $\schnt{\gamma_1}{\gamma_2}{2}$ folgt analog:
+%\[\phi_2=\arccos(\frac{-\sin(b_2)+3\cos(b_2)}{\sqrt{1+3} \sqrt{3 \cos[2](b_2)+\sin[2](b_2)}})
+%=\arccos(\frac{\frac{\sqrt{2}}{2}-3\frac{\sqrt{2}}{2}}{\sqrt{4} \sqrt{3 (\frac{\sqrt{2}}{2})^2+(\frac{\sqrt{2}}{2})^2}})
+%=\arccos(-\frac{1}{2})=\frac{2\pi}{3}\]
 
 \item[b)]
 Ermitteln Sie Schnittpunkt und Schnittwinkel der Bildkurven $f(\gamma_1)$ und $f(\gamma_2)$.\\
 Die Schnittpunkt der Bildkurven von $f(\gamma_1)$ und $f(\gamma_2)$ ist gleich der Bild der schnittpunkt der Kurven, d.h
-\[\schnt{f(\gamma_1)}{f(\gamma_2)}{i}=f(\schnt{\gamma_1}{\gamma_2}{i}),\quad i\in\qty{1,2}\]
+\[\schnt{f(\gamma_1)}{f(\gamma_2)}{P}=f(\schnt{\gamma_1}{\gamma_2}{P})%,\quad i\in\qty{1,2}
+\]
 Berechnung:
-\[\widetilde{P}_{f(\gamma_1),f(\gamma_2),1}=f\left(\frac{\sqrt{2}}{2}+\imag\left(\frac{\sqrt{6}}{2}\right)\right)=\left(\frac{\sqrt{2}}{2}+\imag\left(\frac{\sqrt{6}}{2}\right)\right)^2-\left(\frac{\sqrt{2}}{2}+\imag\left(\frac{\sqrt{6}}{2}\right)\right)\sqrt{2}\]
+\[\schnt{f(\gamma_1)}{f(\gamma_2)}{\widetilde{P}}=f\left(\frac{\sqrt{2}}{2}+\imag\left(\frac{\sqrt{6}}{2}\right)\right)=\left(\frac{\sqrt{2}}{2}+\imag\left(\frac{\sqrt{6}}{2}\right)\right)^2-\left(\frac{\sqrt{2}}{2}+\imag\left(\frac{\sqrt{6}}{2}\right)\right)\sqrt{2}\]
 \[=-1+\imag \sqrt{3}-1 - \imag \sqrt(3)=-2\]
-\[\schnt{f(\gamma_1)}{f(\gamma_2)}{1}=\begin{pmatrix}2\\0\end{pmatrix}\]
-und
-\[\widetilde{P}_{f(\gamma_1),f(\gamma_2),2}
-=f\left(-\frac{\sqrt{2}}{2}-\imag\left(\frac{\sqrt{6}}{2}\right)\right)
-=\left(\frac{\sqrt{2}}{2}+\imag\left(\frac{\sqrt{6}}{2}\right)\right)^2+\left(\frac{\sqrt{2}}{2}+\imag\left(\frac{\sqrt{6}}{2}\right)\right)\sqrt{2}\]
-\[=-1+\imag \sqrt{3}+1 + \imag \sqrt(3)=2 \imag \sqrt 3\]
-\[\schnt{f(\gamma_1)}{f(\gamma_2)}{2}=\begin{pmatrix}0\\2\sqrt 3\end{pmatrix}\]
+\[\schnt{f(\gamma_1)}{f(\gamma_2)}{P}=\begin{pmatrix}2\\0\end{pmatrix}\]
+%und
+%\[\widetilde{P}_{f(\gamma_1),f(\gamma_2),2}
+%=f\left(-\frac{\sqrt{2}}{2}-\imag\left(\frac{\sqrt{6}}{2}\right)\right)
+%=\left(\frac{\sqrt{2}}{2}+\imag\left(\frac{\sqrt{6}}{2}\right)\right)^2+\left(\frac{\sqrt{2}}{2}+\imag\left(\frac{\sqrt{6}}{2}\right)\right)\sqrt{2}\]
+%\[=-1+\imag \sqrt{3}+1 + \imag \sqrt(3)=2 \imag \sqrt 3\]
+%\[\schnt{f(\gamma_1)}{f(\gamma_2)}{2}=\begin{pmatrix}0\\2\sqrt 3\end{pmatrix}\]
 \newcommand{\f}{\vec{\text{\fontshape{ui}\selectfont f}}}
-Um die Schnittwinkel zu berechnen liniearisieren wir auch $\f(\vec{\upgamma}_i(t_i)), i \in \qty{1,2}$
+Um die Schnittwinkel zu berechnen liniearisieren wir auch $\f(\vec{\upgamma}_i(t)), i \in \qty{1,2}$
 
-Es gilt: \[\frac{\partial}{\partial t_i}\left(\f(\vec{\upgamma}_i(t_i))\right)=\dfrac{\partial \f}{\partial \vec{\upgamma_i}}\dfrac{\partial \vec{\upgamma_i}}{\partial t_i}\]
+Es gilt: \[\frac{\partial}{\partial t}\left(\f(\vec{\upgamma}_i(t))\right)=\dfrac{\partial \f}{\partial \vec{\upgamma_i}}\dfrac{\partial \vec{\upgamma_i}}{\partial t}\]
 \(\dfrac{\partial \vec{\upgamma_i}}{\partial t_i}\) sind die Linearisierungen von $\vec{\upgamma_i}$, wir haben diese schon berechnet.
 \[\dfrac{\partial \f}{\partial \vec{\upgamma_i}}=
 \begin{pmatrix}
@@ -240,13 +244,15 @@ Wir berechnen die Skalarprodukt \[\pfa\cdot\pfb=\begin{pmatrix}
     -\sqrt{6} a
 \end{pmatrix}\right|=\sqrt{(\sqrt{2}a-8a^2)^2+(\sqrt{6} a)^2}\] 
 Daraus folgt:
-\[\cos(\phi_i)=\frac{\pfa\cdot\pfb}{\left|\pfa\right|\left|\pfb\right|}
+\[\cos(\phi_2)=\frac{\pfa\cdot\pfb}{\left|\pfa\right|\left|\pfb\right|}
 =\frac{4 a \left(8 a^2-2 \sqrt{2} a+1\right)}{\sqrt{\left(\sqrt{2}+4a\right)^2+\left(4\sqrt{3}a-\sqrt{6}\right)^2}\sqrt{\left(\sqrt{2}a-8a^2\right)^2+\left(\sqrt{6} a\right)^2}}
-\]\[=\frac{a \sqrt{8 a^2-2 \sqrt{2} a+1}}{2 \sqrt{a^2 \left(8 a^2-2 \sqrt{2} a+1\right)}}\]
-für \(\schnt{f(\gamma_1)}{f(\gamma_2)}{1}\) gilt $a_1=\frac{\sqrt 2}{2}$:
-\[\phi_1=\arccos(\frac{a \sqrt{8 a_1^2-2 \sqrt{2} a_1+1}}{2 \sqrt{a_1^2 \left(8 a_1^2-2 \sqrt{2} a_1+1\right)}})=\arccos(\frac{1}{2})=\frac{\pi}{3}\]
-für \(\schnt{f(\gamma_1)}{f(\gamma_2)}{2}\) gilt $a_2=-\frac{\sqrt 2}{2}$:
-\[\phi_2=\arccos(\frac{a \sqrt{8 a_2^2-2 \sqrt{2} a_2+1}}{2 \sqrt{a_2^2 \left(8 a_2^2-2 \sqrt{2} a_2+1\right)}})=\arccos(-\frac{1}{2})=\]
+\]
+\[=\frac{a \sqrt{8 a^2-2 \sqrt{2} a+1}}{2 \sqrt{a^2 \left(8 a^2-2 \sqrt{2} a+1\right)}}
+=\frac{a \sqrt{8 a^2-2 \sqrt{2} a+1}}{2 \left|a\right| \sqrt{ \left(8 a^2-2 \sqrt{2} a+1\right)}}=\text{sgn}(a)\frac{1}{2}\]
+für \(\schnt{f(\gamma_1)}{f(\gamma_2)}{P}\) gilt $a=\frac{\sqrt 2}{2}$:
+\[\phi_2=\arccos(\frac{1}{2})=\frac{\pi}{3}\]
+%für \(\schnt{f(\gamma_1)}{f(\gamma_2)}{2}\) gilt $a_2=-\frac{\sqrt 2}{2}$:
+%\[\phi_2=\arccos(\frac{a \sqrt{8 a_2^2-2 \sqrt{2} a_2+1}}{2 \sqrt{a_2^2 \left(8 a_2^2-2 \sqrt{2} a_2+1\right)}})=\arccos(-\frac{1}{2})=\]
 \end{itemize}
 
 
@@ -255,7 +261,24 @@ für \(\schnt{f(\gamma_1)}{f(\gamma_2)}{2}\) gilt $a_2=-\frac{\sqrt 2}{2}$:
 Ermitteln Sie fur die Möbius-Transformationen $h_1$ und $h_2$ mit:
 \[h_1(z)=\frac{2z-1}{3z-2},\quad h_2(z)=\frac{z-1}{-2z+3}\]
 die Komposition $h_1 \circ h_2$ und die inversen Transformationen $h_1^{-1}$ und $h_2^{-1}$.
-
+\\
+Die Komposition von $h_1 \circ h_2$ folgt:
+\[h_1(h_2(z))=h_1\left(\frac{z-1}{-2z+3}\right)=\frac{2\left(\frac{z-1}{-2z+3}\right)-1}{3\left(\frac{z-1}{-2z+3}\right)-2}=\frac{2\left(\frac{z-1}{-2z+3}\right)-1}{3\left(\frac{z-1}{-2z+3}\right)-2}\frac{-2z+3}{-2z+3}\]
+\[\frac{2 (z-1)-(-2z+3)}{3\left(z-1\right)-2(-2z+3)}=\frac{4 z -5}{7 z -9}\]
+Für die inverse von $h_1^{-1}$
+Wir machen eine Variabel umtauschung, \(\omega \longleftrightarrow z\)
+wir lösen es auf $\omega$ um.
+\[z=\frac{2\omega -1}{3 \omega -2}\]
+\[(3 \omega -2)z=2\omega -1\]
+\[3\omega z -2z=2\omega -1\]
+\[\frac{1 -2z}{2-3z}=\omega\]
+\[\omega=\frac{2z-1}{3z-2}=h_1^{-1}\]
+Für die inverse von $h_2^{-1}$ folgt analog:
+\[z=\frac{\omega -1}{-2 \omega+3}\]
+\[(-2 \omega+3)z=\omega -1\]
+\[-2 \omega z+3z=\omega -1\]
+\[\frac{1 +3z}{1+2z}=\omega\]
+\[\omega=\frac{3z+1}{2z+1}=h_2^{-1}\]
 \end{section}
 \begin{section}{Aufgabe}%Aufgabe 3
 Eine Möbius-Transformation $T$ werde durch die Angaben
@@ -263,12 +286,30 @@ Eine Möbius-Transformation $T$ werde durch die Angaben
 beschrieben.
 \begin{itemize}
 \item[a)]
-Bestimmen Sie den Term $f(z)$ für $z \in \bC$.
+Bestimmen Sie den Term $f(z)$ für $z \in \bC$.\\
+Wir verwenden den Ansatz: \(f(z)=\frac{z a+b}{z c+d}\)
+Wir haben die Folgende Systemgleichung
+\[1=\frac{a+b}{c+d}\]
+\[1+\imag=\frac{\imag a+b}{\imag c+d}\]
+\[2+2\imag=\frac{(-1+\imag)a+b}{(-1+\imag)c+d}\]
+Daraus folgt:
+\begin{equation}
+    a+b=c+d \label{eq:1}
+\end{equation}
+\[(\imag c+d)(\imag+1)=-c+d+\imag(c+d)=\imag a+b\]
+somit gilt:
+\[a=c+d\]
+\[b=-c+d\]
+wegen \eqref{eq:1} muss $d=0$ sein, bzw $a=-b$.
+\[(2+2\imag)(\imag-1)=-4=(\imag-1)a+b=(\imag-1)c-c=c(\imag-2)\]
+Daraus folgt:
+\[c=\frac{4}{2-\imag}=\frac{4 (2+\imag)}{5}=a=-b\]
+also
+\[f(z)=\frac{z \left(\frac{4 (2+\imag)}{5}\right)-\left(\frac{4 (2+\imag)}{5}\right)}{z \left(\frac{4 (2+\imag)}{5}\right)}=1-\frac{1}{z}\]
 \item[b)]
-%\setmathfont{Latin Modern Math}
-
 Bestimmen Sie von der offenen Halbgeraden $\gamma : t \mapsto t \imag, 0 < t < \infty$ rechnerisch
 das Bild $f(\gamma)$ und beschreiben Sie es als geometrische Figur.
+
 \end{itemize}
 \end{section}
 \end{document}

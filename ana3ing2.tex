@@ -20,7 +20,8 @@
 \usepackage{physics}
 \usepackage[linkcolor=blu,colorlinks=false]{hyperref}
 \usepackage{cleveref}
-\usepackage{breqn}
+%\usepackage{breqn} breqn doesnt work wtf
+\usepackage{newtxmath}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
 \usepackage{microtype}  % Minature font tweaks
@@ -121,14 +122,14 @@ Wir sagen
 \[u(x,y)=y \sin x \sinh y + x \cos x \cosh y\]
 \[\partial_x u=y \cos x \sinh y + \cosh y (\cos x-x \sin x )\]
 \[\partial_x^2 u=-y \sin x \sinh y + \cosh y (-\sin x-(\sin x+x \cos x) )\]
-\[\partial_y u=\sin x(\sinh y + y \cosh y)+x \cosh x \sinh y\]
-\[\partial_y^2 u=\sin x(\cosh y + (y \sinh y+\cosh y))+x \cosh x \cosh y\]
+\[\partial_y u=\sin x(\sinh y + y \cosh y)+x \cos x \sinh y\]
+\[\partial_y^2 u=\sin x(\cosh y + (y \sinh y+\cosh y))+x \cos x \cosh y\]
 \(\Delta u=0\), $u$ ist deshalb Harmonisch
 Sodass $f$ analytisch seien kann, dann $f$ muss überall in seine Definitionsbereich differenzierbar sein.
 Die C-R-DGL sollen erfüllt sein:
 \begin{align}
 \partial_x u &= \partial_y v = y \cos x \sinh y + \cosh y (\cos x-x \sin x )  \label{crdgl1}\\ 
-\partial_y u &= -\partial_x v = (\sin x(\sinh y + y \cosh y)+x \cosh x \sinh y) \label{crdgl2}
+\partial_y u &= -\partial_x v = (\sin x(\sinh y + y \cosh y)+x \cos x \sinh y) \label{crdgl2}
 \end{align}
 Da wir \(\partial_y v\) und \(\partial_x v\) haben, können wir nach Harmonizität in $v$ prüfen.
 \[\partial_y^2 v=\cos x(\sinh y +y \cosh y)+\sinh y (\cos x-x \sin x )\]
@@ -141,17 +142,18 @@ Wir integrieren
 Daraus folgt:
 \[\int y  \sinh y dy=\frac{1}{2} \int y(e^y-e^{-y}) dy=\frac{1}{2} (y(e^y+e^{-y})-e^y+e^{-y})=(y(\cosh y)-\sinh{y})\]
 Somit kann man rechnen:
-\begin{dmath*}
+\begin{multline*}
 v(x,y) = 
-\int \partial_y v dy=\int y \cos x \sinh y + \cosh y (\cos x-x \sin x ) dy =\cos x \int y  \sinh y dy + \sinh y (\cosh y (\cos x-x \sin x ) )
+\int \partial_y v dy=\int y \cos x \sinh y + \cosh y (\cos x-x \sin x ) dy\\ =
+\cos x \int y  \sinh y dy + \sinh y (\cosh y (\cos x-x \sin x ) )\\
 =\cos x (y(\cosh y)-\sinh{y}) + \sinh y (\cos x-x \sin x ) + C(x)
 =\cos x (y\cosh y)-\sinh y (x \sin x ) + C(x)
-\end{dmath*}
+\end{multline*}
 Wir leiten nach $x$ ab um $C(x)$ herauszufinden.
-\begin{dmath*}
+\begin{multline*}
 \partial_x v= -\sin(x)(y\cosh y)-\sinh y (\sin x+x\cos x)+C'(x)\overset{!}{=}
--(\sin x(\sinh y + y \cosh y)+x \cosh x \sinh y)
-\end{dmath*}
+-(\sin x(\sinh y + y \cosh y)+x \cos x \sinh y)
+\end{multline*}
 Dafür muss $C'(x)=0$ bzw Konstant sein.
 Wir evaluieren $v(x,y)$ an der stelle $(0,1)$
 \[v(0,1)= (\cosh 1)+C\]

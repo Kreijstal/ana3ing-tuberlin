@@ -106,7 +106,7 @@ Wir finden die Gemeinsames punkt in dem wir das Problem im $\bR^2$ umstellen.
 =\begin{pmatrix}a\\a\sqrt{3}\end{pmatrix}}\]
 \[\vfunc{\vec{\upgamma}_2}{\bR}{\bR^2}{b}{\begin{pmatrix}\Re(\gamma_2(b))\\\Im(\gamma_2(b))\end{pmatrix}
 =\begin{pmatrix}\cos b\\\sin(b)\sqrt{3}\end{pmatrix}}\]
-Wir bauen die folgendes Gleichung System:
+Wir bauen die folgendes Gleichungsystem:
 \[\begin{pmatrix}a\\a\sqrt{3}\end{pmatrix}=\begin{pmatrix}\cos(b)\\\sin(b)\sqrt{3}\end{pmatrix}
 \implies a=\cos(b)=\sin(b)\implies b_1=\frac{\pi}{4},\quad b_2=\pi+\frac{\pi}{4}\]
 %fuck Ich habe die 2 schnittpunkt auch berechnet weil es mir spät ausgefallen ist, die Rechnung wird kommentiert
@@ -114,7 +114,7 @@ Wir wurden 2 Schnittpunkten haben, jedoch fällt 1 raus, da $0 \leq b < \pi$, al
 \newcommand{\schnt}[3]{#3_{#1,#2}}
 \[\schnt{\gamma_1}{\gamma_2}{P}=\begin{pmatrix}\frac{\sqrt{2}}{2}\\\frac{\sqrt{2}}{2} \sqrt{3}\end{pmatrix}%,\quad \schnt{\gamma_1}{\gamma_2}{2}=-\schnt{\gamma_1}{\gamma_2}{1}
 \]
-Wir berechnen die schnittwinkel zwischen $\gamma_1$ und $\gamma_2$, dafür linearisieren die Funktionen an der stelle $\schnt{\gamma_1}{\gamma_2}{1}$ und $\schnt{\gamma_1}{\gamma_2}{2}$:\\
+Wir berechnen die Schnittwinkel zwischen $\gamma_1$ und $\gamma_2$, dafür linearisieren (Taylor-Approximation) die Funktionen an der Stelle $\schnt{\gamma_1}{\gamma_2}{P}$:\\
 \[\vec{\upgamma_1}'(a)=\begin{pmatrix}1\\\sqrt{3}\end{pmatrix}\]
 \[\vec{\upgamma_2}'(b)=\begin{pmatrix}-\sin(b)\\\cos(b)\sqrt{3}\end{pmatrix}\]
 für $\schnt{\gamma_1}{\gamma_2}{P}$:
@@ -266,7 +266,7 @@ Die Komposition von $h_1 \circ h_2$ folgt:
 \[h_1(h_2(z))=h_1\left(\frac{z-1}{-2z+3}\right)=\frac{2\left(\frac{z-1}{-2z+3}\right)-1}{3\left(\frac{z-1}{-2z+3}\right)-2}=\frac{2\left(\frac{z-1}{-2z+3}\right)-1}{3\left(\frac{z-1}{-2z+3}\right)-2}\frac{-2z+3}{-2z+3}\]
 \[\frac{2 (z-1)-(-2z+3)}{3\left(z-1\right)-2(-2z+3)}=\frac{4 z -5}{7 z -9}\]
 Für die inverse von $h_1^{-1}$
-Wir machen eine Variabel umtauschung, \(\omega \longleftrightarrow z\)
+tauschen wir eine Variabel um, \(\omega \longleftrightarrow z\)
 wir lösen es auf $\omega$ um.
 \[z=\frac{2\omega -1}{3 \omega -2}\]
 \[(3 \omega -2)z=2\omega -1\]
@@ -288,7 +288,7 @@ beschrieben.
 \item[a)]
 Bestimmen Sie den Term $f(z)$ für $z \in \bC$.\\
 Wir verwenden den Ansatz: \(f(z)=\frac{z a+b}{z c+d}\)
-Wir haben die Folgende Systemgleichung
+Wir haben die folgende Systemgleichung
 \[1=\frac{a+b}{c+d}\]
 \[1+\imag=\frac{\imag a+b}{\imag c+d}\]
 \[2+2\imag=\frac{(-1+\imag)a+b}{(-1+\imag)c+d}\]
@@ -310,7 +310,7 @@ also
 Bestimmen Sie von der offenen Halbgeraden $\gamma : t \mapsto t \imag, 0 < t < \infty$ rechnerisch
 das Bild $f(\gamma)$ und beschreiben Sie es als geometrische Figur.
 \[f(\gamma)=1-\frac{1}{\gamma}=1-\frac{1}{t \imag}=1+\frac{\imag}{t}\]
-Es ist eine Halberade parallel zu der $\imaginary$ Achse, aber nur auf der positiv Imaginär seite. $1+a \imag,\quad a<0<\infty$
+Es ist eine Halberade parallel zu der $\imaginary$ Achse, aber nur auf der positiv maginär Seite. $1+a \imag,\quad a<0<\infty$
 oder $x=1,y>0$
 
 

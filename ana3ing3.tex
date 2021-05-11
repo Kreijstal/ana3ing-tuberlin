@@ -346,20 +346,55 @@ Wir haben die folgende Systemgleichung
 \[1+\imag=\frac{\imag a+b}{\imag c+d}\]
 \[2+2\imag=\frac{(-1+\imag)a+b}{(-1+\imag)c+d}\]
 Daraus folgt:
-\begin{equation}
-    a+b=c+d \label{eq:1}
-\end{equation}
-\[(\imag c+d)(\imag+1)=-c+d+\imag(c+d)=\imag a+b\]
-somit gilt:
-\[a=c+d\]
-\[b=-c+d\]
-wegen \eqref{eq:1} muss $d=0$ sein, bzw $a=-b$.
-\[(2+2\imag)(\imag-1)=-4=(\imag-1)a+b=(\imag-1)c-c=c(\imag-2)\]
-Daraus folgt:
-\[c=\frac{4}{2-\imag}=\frac{4 (2+\imag)}{5}=a=-b\]
-also
-\[f(z)=\frac{z \left(\frac{4 (2+\imag)}{5}\right)-\left(\frac{4 (2+\imag)}{5}\right)}{z \left(\frac{4 (2+\imag)}{5}\right)}=1-\frac{1}{z}\]
-\item[b)]
+\begin{align}
+    a+b&=c+d \label{eq:1}\\
+    (\imag c+d)(\imag+1)=-c+d+\imag(c+d)&=\imag a+b\label{eq:2}
+\end{align}
+und
+\[((-1+\imag)c+d)(2+2\imag)=-4 c+2 \imag d+2 d=-a+ \imag a +b=((-1+\imag)a+b)\]
+mit \eqref{eq:2}
+\[-4 c+2 \imag d+2 d=-a -c+d+\imag(c+d)\]
+\[-3 c+ \imag d+ d=-a +\imag c\]
+Man könnte das in reelle und imaginäre teile trennen, aber es ist möglich mit Rotationen, Translationen und Inversionen, eine Möbiustransform zu bauen, wir beobachten, dass $f(1)=1$ ein Feste punkt ist.
+Sei $g(z)=f(z+1)-1$ folgt:
+\begin{align*}
+g(0)&=0    \\
+g(\imag-1)&=\imag \\
+g(-2+\imag)&=1+2\imag
+\end{align*}
+Wir drehen unsere Bild so $h(z)=\imag g(z)$:
+\begin{align*}
+h(0)&=0    \\
+h(\imag-1)&=-1 \\
+h(-2+\imag)&=-2+\imag
+\end{align*}
+Wir erhalten eine neue Gleichungsystem.
+\[h(0)=\frac{0 a+b}{0 c+d}=\frac{b}{d}=0\implies b=0\]
+\[h(\imag-1)=\frac{(\imag-1)a}{(\imag-1) c+d}=-1\implies a=-c-\frac{d}{\imag-1}\]
+\[h(\imag-2)=\frac{(\imag-2)a}{(\imag-2) c+d}=\imag-2\implies a=c(\imag-2)+d\]
+Somit:
+\begin{align*}
+c(\imag-2)+d&=-c-\frac{d}{\imag-1}   \\
+c(\imag-1)+d&=-\frac{d}{\imag-1}\\
+c(\imag-1)^2+d(\imag-1)&=-d\\
+c(\imag-1)^2+d \imag&=0\\
+-2 \imag c+d \imag&=0\\
+-2 c+d &=0\\
+d &=2c
+\end{align*}
+Wir nehmen o.B.d.A dass $c=1$,
+dann $d=2$ und $a=(\imag-2)+2=\imag$.
+\[h(z)=\frac{\imag z}{z+2}\]
+\[f(z)=g(z-1)+1=-\imag h(z-1)+1=-\imag \frac{\imag (z-1)}{z+1}+1= \frac{(z-1)}{z+1}+1\]
+\[f(1)=0+1\]
+\[f(\imag)=\frac{(\imag-1)}{\imag+1}+1=\frac{(\imag-1)^2}{\left(\imag+1\right)\left(\imag-1\right)^2}+1=\imag+1\]
+\[f(\imag-1)=\frac{(\imag-2)}{\imag}+1=-\imag(\imag-2)+1=2\imag+2\]
+
+\item[b)] Bestimmen Sie Bild und Urbild des unendlich fernen Punkts $\infty$
+\[\lim_{z\rightarrow\infty}f(z)=\frac{(z-1)}{z+1}+1=1+1=2\]
+Unsere Nenner ist $z+1$, daraus folgt dass $\lim_{z\rightarrow-1} f(z)=\infty$
+
+\item[alt b)]
 Bestimmen Sie von der offenen Halbgeraden $\gamma : t \mapsto t \imag, 0 < t < \infty$ rechnerisch
 das Bild $f(\gamma)$ und beschreiben Sie es als geometrische Figur.
 \[f(\gamma)=1-\frac{1}{\gamma}=1-\frac{1}{t \imag}=1+\frac{\imag}{t}\]

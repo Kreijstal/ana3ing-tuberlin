@@ -84,6 +84,7 @@
         mark=at position .5 with {\arrow[#1]{stealth}}
       }}},
 }
+
 \usepackage[german=quotes]{csquotes}
 %\DeclareSymbolFont{eulerletters}{U}{zeur}{b}{n}
 %\DeclareSymbolFont{cmrot1italics}{OT1}{cmr}{m}{it}
@@ -224,7 +225,7 @@ oder
 \end{align*}
 Also $c=\frac{1}{2}$, jetzt um $r$ zu finden. Wir ersetzen diese Ergebnis in \eqref{eq:1} und somit ist $r=\frac{1}{2}$
 Also wir haben den Kreis $\left|z-\frac{1}{2}\right|=\frac{1}{2}$
-Wir wollen nun herausfinden welche die Durchlaufsinn, wo würde Re(z)<1 im oder Außerkreis abgebildet. Die Richtung lässt sich bestimmen in den man $\partial_t f(\gamma(t))$ an einen Punkt berechnet
+Wir wollen nun herausfinden, was für Durchlaufsinn, wo $Re(z)<1$ abgebildet ist, hat. Die Richtung lässt sich bestimmen in den man $\partial_t f(\gamma(t))$ an einen Punkt berechnet
 \begin{align*}
         \partial_t \frac{1-\imag t}{1+t^2}
 =-\frac{2 (1-\imag t) t}{\left(t^2+1\right)^2}-\frac{\imag}{t^2+1}\\
@@ -261,6 +262,13 @@ An der Punkt $(1,0)$ entspricht dass eine Durchrichtung im Uhrsinn, das bedeutet
   \caption{Kurve vor $f$}
 \end{subfigure}%
 {\LARGE$\xrightarrow{\frac{1}{z}}$}%
+\tikzset{
+  % style to add an arrow in the middle of a path
+  mid arrow/.style={postaction={decorate,decoration={
+        markings,
+        mark=at position .5 with {\arrowreversed[#1]{stealth}}
+      }}},
+}
 \begin{subfigure}{.47\textwidth}
   \centering
   \begin{tikzpicture}[x=2cm,y=2cm]
@@ -332,8 +340,8 @@ und als Ansatzfunktion die harmonische Funktion $\ln(x^2+ y^2)$ benutzen.
         x^2+y^2-15\\-2\sqrt{15}
     \end{pmatrix}
     \]
-    Wir finden heraus wo sind die Rände abgebildet.\\
-    Wir nehmen 3 Punkten, für Kreis $\Im(z)=0$.\\
+    Wir finden heraus, wo die Rände abgebildet sind.\\
+    Wir nehmen 3 Punkten für Kreis $\Im(z)=0$.\\
     zum Beispiel, Punkte $\left(0,1,\infty\right)$, sind in $\left(-1,\frac{1-\sqrt{15}}{1+\sqrt{15}},1\right)$ abgebildet.\\
     Wir simplifizieren:
     \[\frac{1-\sqrt{15}}{1+\sqrt{15}}=\frac{1}{16}(1-\imag\sqrt{15})^2=\frac{1}{8}\left(7-\imag\sqrt{15}\right).\] Also die Einheitskreis, wo $\Im(z)$ zu $|z|>1$ abgebildet wird.\\

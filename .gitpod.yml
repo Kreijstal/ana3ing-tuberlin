@@ -6,5 +6,9 @@ tasks:
 
 vscode:
   extensions:
-    - james-yu.latex-workshop@8.16.1:6fa4781b23391668bffdedabbfdfa6bc
     - valentjn.vscode-ltex@10.2.0:d993f760d28e87240f6abbd206218f9b
+    - streetsidesoftware.code-spell-checker-german@0.1.8:9d1abc77cf471d8379518f6be8aae34b
+    - torn4dom4n.latex-support@3.6.0:8206c6839af44c6a61a52f0945932451
+    - jeffersonqin.latex-snippets-jeff@1.2.3:07192ee4b058f0d2773232e3208d5cb7
+    - efoerster.texlab@2.2.1:58163fe2a360fec2e5f6b24c6e34a5af
+    - james-yu.latex-workshop@8.17.0:085af093a6a192e73865ceed7ef5a843

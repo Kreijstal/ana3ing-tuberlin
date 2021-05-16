@@ -1,0 +1,134 @@
+\documentclass{scrartcl}
+\def\wochenumber{5}
+\input{preamble}
+\begin{document}
+\maketitle
+%\author
+\begin{section}{Aufgabe}%Aufgabe 1
+    (Hausaufgabe zum Stoff der Ubung 4)\\
+    Gegeben seien folgende zwei Kurven:
+    \begin{align*}
+        \gamma_1&: t\mapsto e^{\imag t},\quad \frac{\pi}{2}\leq t \leq \pi,\\
+        \gamma_2&: t\mapsto 1+\imag t,\quad -1\leq t \leq 2.
+    \end{align*}
+Berechnen Sie die folgenden komplexen Kurvenintegrale mit der Definition als Parameterintegrale:
+\[\text{a)} \int_{\gamma_1}\frac{\log(\imag \log \overline z)}{z}dz,\text{ b) }\int_{\gamma_2}\frac{1}{z^2}dz\]
+
+\begin{subsection}{Antwort}
+    %der Zusammenhang zwischen Kurvenintegral und Vektorfeldern: 
+    %\[\int_C f(z)dz=\int_C \begin{psmallmatrix}
+    %    u\\-v
+    %\end{psmallmatrix}\*d\vec{s}+\imag \int_C \begin{psmallmatrix}
+    %    v\\u
+    %\end{psmallmatrix}\*d\vec{s}.\]
+    Man kann komplexe Parameterintegrale so schreiben: 
+    \[\int_{\gamma}f(z)dz=\int_{b}^a f(\gamma(t))\gamma'(t) dt\]
+    %Sei $\vfunc{\text{ReIm}}{\bC}{\bR^2}{x+\imag y}{\begin{pmatrix}x\\y\end{pmatrix}}$, und\\ $$\vfunc{\operatorname{atan2}}{]-\pi,\pi]^2\setminus \qty{(0,0)}}{\bR }{(x,y)}{\begin{cases}
+ %\arctan\left(\frac{y}{x}\right) &\text{if } x > 0, \\
+ %\frac{\pi}{2} - \arctan\left(\frac{x}{y}\right) &\text{für } y > 0, \\
+ %-\frac{\pi}{2} - \arctan\left(\frac{x}{y}\right) &\text{für } y < 0, \\
+ %\arctan\left(\frac{y}{x}\right) \pm \pi &\text{für } x < 0.
+%\end{cases}}$$
+\begin{itemize}
+\item[a)]
+    für das erste Integral beobachen wir, dass im Einheitskreis wo $\gamma_1$ liegt, gilt:
+    \[\overline{z}=\frac{1}{z}\]
+     daraus folgt:
+     \[\int_{\gamma_1} \frac{\log(\imag \log \overline z)}{z} dz 
+     =\int_{\gamma_1} \frac{\log(\imag \log \frac{1}{z})}{z} dz \]
+     Wir verwenden die parametrizierung und ihre Ableitung $\gamma_1'(t)=\imag e^{\imag t}$
+      \[\int_{\frac{\pi}{2}}^\pi \frac{\log(\imag \log \frac{1}{e^{\imag t}})}{e^{\imag t}} \imag e^{\imag t} dt 
+      =\int_{\frac{\pi}{2}}^\pi \log(\imag \log \frac{1}{e^{\imag t}}) \imag dt 
+      =\int_{\frac{\pi}{2}}^\pi \log(\imag \log e^{-\imag t}) \imag dt 
+      =\int_{\frac{\pi}{2}}^\pi \log(\imag( -\imag t)) \imag dt 
+      \]
+      \[=\int_{\frac{\pi}{2}}^\pi \log(t) \imag dt
+      = \imag\int_{\frac{\pi}{2}}^\pi \log(t) dt =\imag\left[t \log(t)-t\right]_{t=\frac{\pi}{2}}^{t=\pi}
+      =\imag \left(\pi \log(\pi)-\pi-\left(\frac{\pi}{2} \log(\frac{\pi}{2})-\frac{\pi}{2}\right)\right)\]
+      \[=\imag \left(\pi \log(\pi)-\frac{\pi}{2} \log(\frac{\pi}{2}) -\frac{\pi}{2}\right)
+      =-\imag \frac{1}{2} \pi \left(1+\log \left(\frac{\pi }{2}\right)-2 \log (\pi )\right)
+      =-\imag \frac{1}{2} \pi  \left(1+\log \left(\frac{1}{2 \pi }\right)\right)
+      =\imag \frac{1}{2} \pi \left(\log(2\pi)-1\right)
+      \]
+ \item[b)]
+ \[\gamma_2'(t)=\imag\]
+
+ Also \[\int_{\gamma_2}\frac{1}{z^2}dz
+ =\int_{-1}^{2}\frac{1}{\left(1+\imag t\right)^2}\imag dt
+ =\imag \int_{-1}^{2}\frac{1}{1-t^2+2\imag t}dt
+ =\imag \int_{-1}^{2}\frac{1-t^2-2\imag t}{\pr{1-t^2}^2+\pr{2 t}^2}dt
+ \]
+ \[ =\imag \int_{-1}^{2}\frac{1-t^2-2\imag t}{\pr{t^4-2 t^2+1}+4t^2}dt
+ =\imag \int_{-1}^{2}\frac{1-t^2-2\imag t}{t^4+2 t^2+1}dt
+ =\imag \int_{-1}^{2}\frac{1-t^2-2\imag t}{\pr{t^2+1}^2}dt
+ %=\imag \int_{-1}^{2}\frac{1-t^2-2\imag t}{\abs{t^2+1}}dt
+ \]
+ %Wir substituieren $t^2+1=u\>dt 2t=du$
+ \[=\imag \int_{-1}^{2}\frac{1-t^2-2\imag t}{\pr{t^2+1}^2}dt
+ =\pr{ \imag\int_{-1}^{2}\frac{1-t^2}{\pr{t^2+1}^2}dt+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt}
+ = \imag\int_{-1}^{2}\frac{1-t^2}{\pr{t^2+1}^2}dt+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt
+ \]
+ \[= -\pr{\imag\int_{-1}^{2}\frac{1}{\pr{t^2+1}}-\frac{2}{\pr{t^2+1}^2}dt}+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt
+ \]
+ \[= -\imag\pr{\int_{-1}^{2}\frac{1}{\pr{t^2+1}}dt-\int_{-1}^{2}\frac{2}{\pr{t^2+1}^2}dt}+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt\]
+ \[= -\imag\pr{\int_{-1}^{2}\frac{1}{\pr{t^2+1}}dt-2\pr{\br{\frac{t}{2\pr{t^2+1}}}_{t=-1}^{t=2}+\frac{1}{2}\int_{-1}^{2}\frac{1}{t^2+1}dt}}+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt\]
+  \[= \imag\pr{2\pr{\br{\frac{t}{2\pr{t^2+1}}}_{t=-1}^{t=2}}}+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt\]
+  \[= \imag\pr{\br{\frac{t}{\pr{t^2+1}}_{t=-1}^{t=2}}}+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt\]
+  \[= \imag\pr{\frac{2}{\pr{2^2+1}}-\frac{-1}{\pr{(-1)^2+1}}}+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt\]
+  \[= \imag\pr{\frac{2}{5}+\frac{1}{2}}+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt\]
+  \[= \imag\frac{9}{10}+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt\]
+  \[= \imag\frac{9}{10}+\int_{-1}^{2}\frac{\partial_t \pr{t^2+1}}{\pr{t^2+1}^2}dt\]
+  \[= \imag\frac{9}{10}+\br{-\frac{1}{\pr{t^2+1}}}_{t=-1}^{t=2}
+  =\imag\frac{9}{10}-\frac{1}{5}+\frac{1}{2}
+  =\imag\frac{9}{10}+\frac{3}{10}\]
+% \[=\imag\int_{-1}^{2}\pr{\frac{2}{t^2+1}-1}dt+\int_{-1}^{2}\frac{2t}{t^2+1}dt\]
+
+
+\end{itemize}
+    %\[\frac{\log(\imag \log \overline z)}{z} \]
+    %$z\>x+\imag y$
+    %\[\frac{\log(\imag \log \overline {(x+\imag y)})}{x+\imag y} =\frac{\log(\imag \log (x-\imag y))}{x+\imag y}\]
+    %Wir können die Logarithm in imaginär und reellenteilen trennen \(\log(x+\imag y)=\log(\sqrtnorm{x,y}+\imag \operatorname{atan2}(x,y))\)
+    %\[\frac{\log(\imag \left(\log\left(\sqrtnorm{x,y}\right)+\imag \operatorname{atan2}(x,y)\right))}{x+\imag y}
+    %=\frac{\log(\imag \log\left(\sqrtnorm{x,y}\right)-\operatorname{atan2}(x,y))}{x+\imag y}
+    %\]
+    
+    
+\end{subsection}
+\end{section}
+\begin{section}{Aufgabe}%2
+Werten Sie das Integral
+\[\int_{\gamma}\frac{z}{1-z^2}dz,\quad \gamma:t\mapsto e^{\imag t},\frac{\pi}{4}<t<\frac{3 \pi}{4}\]
+mit geeigneten Stammfunktionen aus.
+    \begin{subsection}{Antwort}
+        Wir können $z^2=u$ substituieren mit $\frac{du}{dz}=2z$.
+        \[\int \frac{1}{2\pr{1-u}}du=-\frac{1}{2}\log(1-u)=-\frac{1}{2}\log(1-z^2).\]
+        Wir haben eine Stammfunktion, die ihre Definitionsbereich $1-z^2\notin \mathbb G=\qty{x+\imag y\in \bC \mid x>0 \lor y\neq 0}$ gelten soll.\\
+        für $z^2$, das Einheitskreissegment zwischen $\frac{\pi}{4}$ und $\frac{3\pi}{4}$ wird auf das Einheitskreissegment zwischen $\frac{\pi}{2}$ und $\frac{3 \pi}{2}$ abgebildet.
+        $-1$ ist teil dieses Bereich, das ist aber eine Polstelle das Integral.
+        Die Integral ist nicht definiert und hat keine Stammfunktion für diese Definitionsbereich.
+        %$\frac{z}{1-z^2}$ ist eine Möbiustransformation\\
+        %3 Punkten der Einheitskreis:
+        %$\frac{1}{1-1}"="\infty$
+        %$\frac{-1}{1-1}"="\infty$
+    \end{subsection}
+\end{section}
+\begin{section}{Aufgabe}
+    Welche der folgenden Punktmengen sind Gebiete, welche sogar einfach zusammenhängend?
+Entscheiden Sie mit kurzer Begrundung.
+\begin{itemize}
+    \item[a)] \(M_7=\qty{z\in\bC \mid \abs{\Re z}<1},\)
+    \item[b)] \(M_8=\qty{\left(x,y\right) \in\bR^2 \mid x^2+y^2>1},\)
+    \item[c)] \(M_9=\qty{\left(x,y,z\right) \in\bR^3 \mid x+y+z\neq 1},\)
+    \item[d)] \(M_{10}=\bR^3 \setminus \qty{\left(x,y,z\right) \in\bR^3 \mid y=z= 1},\)
+    \item[e)] \(M_{11}=\bC \setminus \qty{z \in\bC \mid \abs{\Re z}\leq 1 \text{und} \Im z=0}.\)
+\end{itemize}
+      \begin{subsection}{Antwort}
+        \begin{itemize}
+\item[a)]
+Nicht zussamenhängend da $x>1$ und $-x<-1$ getrennt ist.
+\item[b)] 
+            \end{itemize}
+    \end{subsection}  
+\end{section}
+\end{document}

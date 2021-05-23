@@ -52,37 +52,37 @@ Berechnen Sie die folgenden komplexen Kurvenintegrale mit der Definition als Par
       \]
  \item[b)]
  \[\gamma_2'(t)=\imag\]
-
  Also \[\int_{\gamma_2}\frac{1}{z^2}dz
  =\int_{-1}^{2}\frac{1}{\left(1+\imag t\right)^2}\imag dt
  =\imag \int_{-1}^{2}\frac{1}{1-t^2+2\imag t}dt
- =\imag \int_{-1}^{2}\frac{1-t^2-2\imag t}{\pr{1-t^2}^2+\pr{2 t}^2}dt
+ =\imag \int_{-1}^{2}\frac{1-t^2-2\imag t}{\qty(1-t^2)^2+\qty(2 t)^2}dt
  \]
- \[ =\imag \int_{-1}^{2}\frac{1-t^2-2\imag t}{\pr{t^4-2 t^2+1}+4t^2}dt
+ \[ =\imag \int_{-1}^{2}\frac{1-t^2-2\imag t}{\qty(t^4-2 t^2+1)+4t^2}dt
  =\imag \int_{-1}^{2}\frac{1-t^2-2\imag t}{t^4+2 t^2+1}dt
- =\imag \int_{-1}^{2}\frac{1-t^2-2\imag t}{\pr{t^2+1}^2}dt
+ =\imag \int_{-1}^{2}\frac{1-t^2-2\imag t}{\qty(t^2+1)^2}dt
  %=\imag \int_{-1}^{2}\frac{1-t^2-2\imag t}{\abs{t^2+1}}dt
  \]
  %Wir substituieren $t^2+1=u\>dt 2t=du$
- \[=\imag \int_{-1}^{2}\frac{1-t^2-2\imag t}{\pr{t^2+1}^2}dt
- =\pr{ \imag\int_{-1}^{2}\frac{1-t^2}{\pr{t^2+1}^2}dt+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt}
- = \imag\int_{-1}^{2}\frac{1-t^2}{\pr{t^2+1}^2}dt+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt
+ \[=\imag \int_{-1}^{2}\frac{1-t^2-2\imag t}{\qty(t^2+1)^2}dt
+ =\qty( \imag\int_{-1}^{2}\frac{1-t^2}{\qty(t^2+1)^2}dt+\int_{-1}^{2}\frac{2t}{\qty(t^2+1)^2}dt)
+ = \imag\int_{-1}^{2}\frac{1-t^2}{\qty(t^2+1)^2}dt+\int_{-1}^{2}\frac{2t}{\qty(t^2+1)^2}dt
  \]
- \[= -\pr{\imag\int_{-1}^{2}\frac{1}{\pr{t^2+1}}-\frac{2}{\pr{t^2+1}^2}dt}+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt
+ \[= -\qty(\imag\int_{-1}^{2}\frac{1}{\qty(t^2+1)}-\frac{2}{\qty(t^2+1)^2}dt)+\int_{-1}^{2}\frac{2t}{\qty(t^2+1)^2}dt
  \]
- \[= -\imag\pr{\int_{-1}^{2}\frac{1}{\pr{t^2+1}}dt-\int_{-1}^{2}\frac{2}{\pr{t^2+1}^2}dt}+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt\]
- \[= -\imag\pr{\int_{-1}^{2}\frac{1}{\pr{t^2+1}}dt-2\pr{\br{\frac{t}{2\pr{t^2+1}}}_{t=-1}^{t=2}+\frac{1}{2}\int_{-1}^{2}\frac{1}{t^2+1}dt}}+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt\]
-  \[= \imag\pr{2\pr{\br{\frac{t}{2\pr{t^2+1}}}_{t=-1}^{t=2}}}+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt\]
-  \[= \imag\pr{\br{\frac{t}{\pr{t^2+1}}_{t=-1}^{t=2}}}+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt\]
-  \[= \imag\pr{\frac{2}{\pr{2^2+1}}-\frac{-1}{\pr{(-1)^2+1}}}+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt\]
-  \[= \imag\pr{\frac{2}{5}+\frac{1}{2}}+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt\]
-  \[= \imag\frac{9}{10}+\int_{-1}^{2}\frac{2t}{\pr{t^2+1}^2}dt\]
-  \[= \imag\frac{9}{10}+\int_{-1}^{2}\frac{\partial_t \pr{t^2+1}}{\pr{t^2+1}^2}dt\]
-  \[= \imag\frac{9}{10}+\br{-\frac{1}{\pr{t^2+1}}}_{t=-1}^{t=2}
+ \[= -\imag\qty(\int_{-1}^{2}\frac{1}{\qty(t^2+1)}dt-\int_{-1}^{2}\frac{2}{\qty(t^2+1)^2}dt)+\int_{-1}^{2}\frac{2t}{\qty(t^2+1)^2}dt\]
+ \[= -\imag\qty(\int_{-1}^{2}\frac{1}{\qty(t^2+1)}dt
+ -2\qty(\qty[\frac{t}{2\qty(t^2+1)}_{t=-1}^{t=2}+\frac{1}{2}\int_{-1}^{2}\frac{1}{t^2+1}dt]))
+ +\int_{-1}^{2}\frac{2t}{\qty(t^2+1)^2}
+ dt\]
+  \[= \imag\qty(2\qty(\qty[\frac{t}{2\qty(t^2+1)}]_{t=-1}^{t=2}))+\int_{-1}^{2}\frac{2t}{\qty(t^2+1)^2}dt\]
+  \[= \imag\qty(\qty[\frac{t}{\qty(t^2+1)}_{t=-1}^{t=2}])+\int_{-1}^{2}\frac{2t}{\qty(t^2+1)^2}dt\]
+  \[= \imag\qty(\frac{2}{\qty(2^2+1)}-\frac{-1}{\qty((-1)^2+1)})+\int_{-1}^{2}\frac{2t}{\qty(t^2+1)^2}dt\]
+  \[= \imag\qty(\frac{2}{5}+\frac{1}{2})+\int_{-1}^{2}\frac{2t}{\qty(t^2+1)^2}dt\]
+  \[= \imag\frac{9}{10}+\int_{-1}^{2}\frac{2t}{\qty(t^2+1)^2}dt\]
+  \[= \imag\frac{9}{10}+\int_{-1}^{2}\frac{\partial_t \qty(t^2+1)}{\qty(t^2+1)^2}dt\]
+ \[= \imag\frac{9}{10}+\qty[-\frac{1}{\qty(t^2+1)}]_{t=-1}^{t=2}
   =\imag\frac{9}{10}-\frac{1}{5}+\frac{1}{2}
   =\imag\frac{9}{10}+\frac{3}{10}\]
-% \[=\imag\int_{-1}^{2}\pr{\frac{2}{t^2+1}-1}dt+\int_{-1}^{2}\frac{2t}{t^2+1}dt\]
-
 
 \end{itemize}
     %\[\frac{\log(\imag \log \overline z)}{z} \]
@@ -92,8 +92,6 @@ Berechnen Sie die folgenden komplexen Kurvenintegrale mit der Definition als Par
     %\[\frac{\log(\imag \left(\log\left(\sqrtnorm{x,y}\right)+\imag \operatorname{atan2}(x,y)\right))}{x+\imag y}
     %=\frac{\log(\imag \log\left(\sqrtnorm{x,y}\right)-\operatorname{atan2}(x,y))}{x+\imag y}
     %\]
-    
-    
 \end{subsection}
 \end{section}
 \begin{section}{Aufgabe}%2
@@ -102,7 +100,7 @@ Werten Sie das Integral
 mit geeigneten Stammfunktionen aus.
     \begin{subsection}{Antwort}
         Wir können $z^2=u$ substituieren mit $\frac{du}{dz}=2z$.
-        \[\int \frac{1}{2\pr{1-u}}du=-\frac{1}{2}\log(1-u)=-\frac{1}{2}\log(1-z^2).\]
+        \[\int \frac{1}{2\qty(1-u)}du=-\frac{1}{2}\log(1-u)=-\frac{1}{2}\log(1-z^2).\]
         Wir haben eine Stammfunktion, die ihre Definitionsbereich $1-z^2\notin \mathbb G=\qty{x+\imag y\in \bC \mid x>0 \lor y\neq 0}$ gelten soll.\\
         für $z^2$, das Einheitskreissegment zwischen $\frac{\pi}{4}$ und $\frac{3\pi}{4}$ wird auf das Einheitskreissegment zwischen $\frac{\pi}{2}$ und $\frac{3 \pi}{2}$ abgebildet.
         $-1$ ist teil dieses Bereich, das ist aber eine Polstelle das Integral.
@@ -121,13 +119,19 @@ Entscheiden Sie mit kurzer Begrundung.
     \item[b)] \(M_8=\qty{\left(x,y\right) \in\bR^2 \mid x^2+y^2>1},\)
     \item[c)] \(M_9=\qty{\left(x,y,z\right) \in\bR^3 \mid x+y+z\neq 1},\)
     \item[d)] \(M_{10}=\bR^3 \setminus \qty{\left(x,y,z\right) \in\bR^3 \mid y=z= 1},\)
-    \item[e)] \(M_{11}=\bC \setminus \qty{z \in\bC \mid \abs{\Re z}\leq 1 \text{und} \Im z=0}.\)
+    \item[e)] \(M_{11}=\bC \setminus \qty{z \in\bC \mid \abs{\Re z}\leq 1 \text{ und } \Im z=0}.\)
 \end{itemize}
       \begin{subsection}{Antwort}
         \begin{itemize}
 \item[a)]
 Nicht zussamenhängend da $x>1$ und $-x<-1$ getrennt ist.
-\item[b)] 
+\item[b)] Es ist zussamenhängend aber nicht einfach zussamenhängend, da es ein Loch am Rand der Einheitskreis hat.
+\item[c)] Es ist auch nicht zussamenhängend da es eine Ebene gibt die der Raum in 2 teilen trennt.
+\item[d)] Es ist nicht zussamenhängend da es eine Lochlinie gibt.
+\item[e)]  
+
+
+
             \end{itemize}
     \end{subsection}  
 \end{section}

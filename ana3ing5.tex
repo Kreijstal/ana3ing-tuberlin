@@ -102,9 +102,16 @@ mit geeigneten Stammfunktionen aus.
         Wir können $z^2=u$ substituieren mit $\frac{du}{dz}=2z$.
         \[\int \frac{1}{2\qty(1-u)}du=-\frac{1}{2}\log(1-u)=-\frac{1}{2}\log(1-z^2).\]
         Wir haben eine Stammfunktion, die ihre Definitionsbereich $1-z^2\notin \mathbb G=\qty{x+\imag y\in \bC \mid x>0 \lor y\neq 0}$ gelten soll.\\
-        für $z^2$, das Einheitskreissegment zwischen $\frac{\pi}{4}$ und $\frac{3\pi}{4}$ wird auf das Einheitskreissegment zwischen $\frac{\pi}{2}$ und $\frac{3 \pi}{2}$ abgebildet.
-        $-1$ ist teil dieses Bereich, das ist aber eine Polstelle das Integral.
-        Die Integral ist nicht definiert und hat keine Stammfunktion für diese Definitionsbereich.
+        Jedoch ist $-\frac{1}{2}\log(a(1-u)),a\in\bR\setminus\qty{0}$ auch eine Stammfunktion von $\frac{1}{2\qty(1-u)}$, die verschiedenen Definitionenbereichen haben kann.
+        Wir setzen $a=1$, und können sehen, dass wenn $1-u$ reell und $<0$ ist, ist es nicht definiert.
+        Das ist ok, weil unsere kurve berüht die Positive reell Achse nicht. Also wir können die Stammfunktion anwenden.
+        \[-\frac{1}{2}\log(1-e^{\imag \frac{3 \pi}{2}})+\frac{1}{2}\log(e^{1-\imag \frac{\pi}{2}})
+        =\qty(-\frac{\log (2)}{4}-\frac{i \pi }{8})-\qty(-\frac{\log (2)}{4}+\frac{i \pi }{8})\]
+        \[- \imag \frac{\pi}4\]
+
+        %für $z^2$, das Einheitskreissegment zwischen $\frac{\pi}{4}$ und $\frac{3\pi}{4}$ wird auf das Einheitskreissegment zwischen $\frac{\pi}{2}$ und $\frac{3 \pi}{2}$ abgebildet.
+        %$-1$ ist teil dieses Bereich, das ist aber eine Polstelle das Integral.
+        %Die Integral ist nicht definiert und hat keine Stammfunktion für diese Definitionsbereich.
         %$\frac{z}{1-z^2}$ ist eine Möbiustransformation\\
         %3 Punkten der Einheitskreis:
         %$\frac{1}{1-1}"="\infty$

@@ -1,0 +1,125 @@
+\documentclass{scrartcl}
+\def\wochenumber{6}
+\input{preamble}
+\begin{document}
+\maketitle
+%\author
+\begin{section}{Aufgabe}%Aufgabe 1
+Berechnen Sie mit dem Integralsatz oder der Integralformel von Cauchy die Integrale
+\[\int_{|z-1|=3}\frac{\cos \pi z} {z^2 - 7z + 10}dz\text{, und }\int_{|z|=1}\tan z dz\]
+und begrunden Sie Ihr Vorgehen. Benutzen Sie ohne Beweis, dass die Nüllstellen der
+Cosinusfunktion alle reell sind.
+
+\begin{subsection}{Antwort}
+    \begin{itemize}
+        \item[a)]
+    Wir können das Integral verschieben:
+    \[\int_{|z+1-1|=3} \frac{\cos (\pi  (z+1))}{(z+1)^2-7 (z+1)+10} \, dz\]
+    und den Nenner reduzieren.
+    \[\int_{|z|=3} \frac{-\cos (\pi  (z))}{(-4+z) (-1+z)} \, dz\]
+Sei $G=\qty{z\in\bC\mid \qty|z|<3+\varepsilon,\varepsilon>0}$ mit eine beliebig klein $\varepsilon$, eine offene Gebiet ist die Punkte wo $|z|=3$ eine Kompakte Teilmenge von $G$. Man kann sehen dass 
+\[f(z)=-\frac{\cos(\pi z)}{-4+z}\] ist auf G analytisch, da ihre Pole ist außer den Kreis $3+\varepsilon$.
+Daraus folgt
+\[\int_{|z|=3} \frac{-\cos (\pi  (z))}{(-4+z) (-1+z)} \, dz=2\pi \imag f(1)=-2\pi \imag \frac{\cos(\pi)}{-3}=-\frac{2}{3}\pi \imag \]
+\item[b)] 
+Die polen sind die Nullstelen von $\cos(z)$, die sind alle Reelle zahlen $\frac{\pi}2 +\pi n,n \in \bZ $
+Keine nullstelle ist im Einheitskreis, also die Integral ergibt 0.
+    \end{itemize} 
+\end{subsection}
+\end{section}
+\begin{section}{Aufgabe}%2
+Gegeben ist die Funktion $\vfunc{u}{\bR^2}{\bR}{(x,y)}{2xy+x^2-y^2}$. Ermitteln Sie Stellen
+und Werte der globalen Extrema der Funktion $u$ auf der abgeschlossenen Kreisscheibe $\qty{(x, y) \in \bR^2\mid x^2 + y^2 \leq 1}.$
+Benutzen Sie bei Bedarf die speziellen Werte  \[ \sin \frac{\pi}{8}=\frac{1}{2} \sqrt{2-\sqrt{2}} \text { und } \cos \frac{\pi}{8}=\frac{1}{2} \sqrt{2+\sqrt{2}} \]
+    \begin{subsection}{Antwort}
+  Wir wissen dass die Extrema der Funktionen sind in Rand, wir verwenden der Lagrange verfahren um Extrema zu finden Kritische punkten:
+  \[\nabla_{x,y} u = - \lambda \nabla_{x,y} g\]
+  wobei $g(x,y)=x^2+y^2-1=0$,
+  Also 
+  \[\Lambda(x,y,\lambda) = u(x,y) + \lambda \cdot g(x,y)\]
+  \[\nabla_{x,y} u=\begin{pmatrix}
+      2 x + 2 y\\
+      2 x - 2 y
+  \end{pmatrix}\]
+  und
+    \[\nabla_{x,y} g=\begin{pmatrix}
+      2 x \\
+      2 y
+  \end{pmatrix}\]
+   Wir können berechnen \[det\begin{pmatrix}
+ 2 x+2 y & 2 x \\
+ 2 x-2 y & 2 y \\
+\end{pmatrix}=0=-4 x^2+8 x y+4 y^2=-4 \qty(x^2-2 x y-y^2)
+\]
+Wir können sehen dass wegen $g$ liegt $x$ und $y$ auf der Einheitskreis. Also
+\[\qty(\cos(\varphi)^2-2 \cos(\varphi) \sin(\varphi)-\sin(\varphi)^2)=0\]
+Wir verwenden den Hinweis und setzten wir $\varphi=\frac{\pi}{8}$
+to be continued..
+
+Alternativ können wir berechnen \[det\begin{pmatrix}
+ 2 \lambda +2 & 2 \\
+ 2 & 2 \lambda -2 \\
+\end{pmatrix}=0=(2 \lambda +2)(2 \lambda -2)-4=4 \lambda ^2-8\implies \lambda = \pm \sqrt{2}
+\]
+für $\lambda =\pm \sqrt{2}$
+\[2x+2y\pm 2\sqrt{2} x =0 \implies x\qty(2\pm 2 \sqrt{2})=-2 y \implies y=-x\qty(1\pm \sqrt{2})\]
+Also
+\[x^2+x^2\qty(1\pm \sqrt{2})^2-1=0\implies x^2\qty(1+\qty(3\pm 2\sqrt{2}))=1\]
+\[x=\pm\frac{1}{\sqrt{4\pm 2\sqrt{2}}}=\]
+Also für $\lambda = \sqrt{2}$
+\[x=\pm \frac{\sqrt{2+\sqrt{2}}}{2}\] 
+und \[y=-x\qty(1+ \sqrt{2})\]
+und für $\lambda = - \sqrt{2}$
+\[x=\pm \frac{\sqrt{2-\sqrt{2}}}{2}\]
+und \[y=-x\qty(1- \sqrt{2})\]
+\newcommand{\xone}{\frac{\sqrt{2+\sqrt{2}}}{2}}
+\newcommand{\xtwo}{\frac{\sqrt{2-\sqrt{2}}}{2}}
+\newcommand{\yone}{\xone\qty(1+ \sqrt{2})}
+\newcommand{\ytwo}{\xtwo\qty(1- \sqrt{2})}
+Wir haben hier 4 Kritischepunkten
+\begin{align*}
+  \qty(\xone,-\yone),\\
+  \qty(-\xone,\yone),\\
+  \qty(\xtwo,-\ytwo),\\
+  \qty(-\xtwo,\ytwo)  
+\end{align*}
+Wir evaluieren auf diesen Stellen.
+\begin{align*}
+    u\qty(\xone,-\yone)=u\qty(-\xone,\yone)\\
+    =\frac{1}{4} \left(2-\sqrt{2}\right)-\frac{1}{2} \left(1-\sqrt{2}\right)
+   \left(2-\sqrt{2}\right)-\frac{1}{4} \left(1-\sqrt{2}\right)^2 \left(2-\sqrt{2}\right)=-4 + 3 \sqrt{2}\\
+   u\qty(\xtwo,-\ytwo)=u\qty(-\xtwo,\ytwo)\\
+   =-4 - 3 \sqrt{2}
+\end{align*}
+
+%Wir können sehen dass wegen $g$ liegt $x$ und $y$ auf der Einheitskreis. Also
+%\[\qty(\cos(\varphi)^2-2 \cos(\varphi) \sin(\varphi)-\sin(\varphi)^2)=0\]
+    \end{subsection}
+\end{section}
+\begin{section}{Aufgabe}
+Mit dieser Aufgabe wollen wir ein Ergebnis mit zwei verschiedenen Methoden herleiten,
+nämlich mit der Methode \enquote{direkt} und mit der Methode \enquote{Poissonsche Integralformel}.
+Auf einer gewissen Kreisscheibe im \( \mathbb{R}^{2} \) sei das Randwertproblem (RWP) für eine Funktion \( u: \mathbb{R}^{2} \rightarrow \mathbb{R} \) gegeben 
+\[ \begin{array}{ll} \Delta u=0 & \text { für } x^{2}+y^{2}<1, \\ u(x, y)=4 x^{2}-2 & \text { für } x^{2}+y^{2}=1 \end{array} \] 
+\begin{itemize}
+\item[a)]Lösen Sie dieses RWP mit einer geeigneten Ansatzfunktion. 
+\item[b)] (Methode \enquote{direkt}:) Bestimmen Sie anhand der in a) erhaltenen Lösung \( u \) den Wert \( u\left(\frac{4}{5}, 0\right) \). 
+\item[c)] Stellen Sie die Poissonsche Integralformel zur Berechnung des Werts \( u\left(\frac{4}{5}, 0\right) \) auf (ähnlich wie in einer Tutoriumsaufgabe) 
+\item[d)] Schreiben Sie das Integral in Ihrer Integralformel in ein komplexes Integral über den Einheitskreis \( |z|=1 \) um (ähnlich wie in einer Tutoriumsaufgabe) 
+\item[e)]  Werten Sie Ihr komplexes Integral mit Hilfe der Cauchyschen Integralsätze und Ergebnissen aus der Vorlesung aus. (Methode, \enquote{Poissonsche Integralformel}) Hierbei dürfen Sie ohne Nachweis folgende Partialbruchzerlegung benutzen: \[ \frac{1}{z^{2}\left(z-\frac{4}{5}\right)\left(z+\frac{5}{4}\right)}=\frac{41}{20} \cdot \frac{1}{z}+\frac{1}{z^{2}}+\frac{64}{25} \cdot 
+\frac{1}{z-\frac{5}{4}}-\frac{125}{36} \cdot \frac{1}{z-\frac{4}{5}}\]
+Begründen Sie aber, warum Sie diese Identität benutzen. Der Rechenweg ist ansonsten (wie immer) vollständig darzustellen.
+\end{itemize}
+
+
+      \begin{subsection}{Antwort}
+\begin{itemize}
+\item[a)] Sollen wir das mit Polarkoordinaten lösen oder Kartesisch? Was ist meine Ansatzfunktion..?
+\item[b)] 
+\item[c)]  
+\item[d)] 
+\item[e)] 
+\end{itemize}
+    \end{subsection}  
+\end{section}
+\end{document}

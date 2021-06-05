@@ -1,0 +1,33 @@
+\documentclass{scrartcl}
+\def\wochenumber{7}
+\input{preamble}
+\begin{document}
+\maketitle
+%\author
+\begin{section}{Aufgabe}%Aufgabe 1
+    Entwickeln Sie die reelle Funktion \( \frac{1}{1+x^{2}} \) in eine reelle Potenzreihe mit Entwicklungspunkt 1. Hierbei ist auch die maximale Konvergenzkreisscheibe zu ermitteln. Hinweise: Sie dürfen diese Aufgabe mit Hilfe von komplexen Zahlen lösen. Die verlangte reelle Potenzreihe darf aber keine komplexe Zahlen mehr enthalten. Reelle Winkelfunktionen brauchen nicht ausgewertet zu werden.
+ 
+\begin{subsection}{Antwort}
+Wir haben
+\[\frac{1}{1+x^2}=\frac{1}{1-(-x^2)}=\sum_{n=0}^\infty (-x^{2n}), \abs{-x^2}<1,\] aber dann ist die Entwicklungspunkt 0, wir wollen unsere "Polynom-Basis" von $x$ zu $x-1$ wechseln.
+
+\[x^2+1=a (x-1)^2+b(x-1)+c = a x^2-2ax+a+bx-b+c\]
+Mit Koeffizientenvergleich
+\[a=1;-2+b=0\>b=2;1-2+c=1\>c=2\]
+
+\[\frac{1}{1+x^2}=\frac{1}{2+2(x-1)+(x-1)^2}\]
+\end{subsection}
+\end{section}
+\begin{section}{Aufgabe}%2
+    Entwickeln Sie die Funktion \( \log z \) in eine Potenzreihe mit dem Entwicklungspunkt $\imag$. (Vergessen Sie nicht, den Konvergenzbereich anzugeben. Ermitteln Sie den Wert der Reihe \[ \sum_{n=1} \frac{\imag^{n}}{n} \] 
+    \begin{subsection}{Antwort}
+ 
+    \end{subsection}
+\end{section}
+\begin{section}{Aufgabe}
+    Berechnen Sie die Integrale \[ \text { a) } \int_{|z-1|=2} \frac{\mathrm{e}^{\imag \pi z}}{(z-1)^{4}} \dd z, \quad \text { b) } \quad \int_{|z-\pi|=1} \frac{z^{4} \sin z}{(z-\pi)^{6}} \dd z \] Tipp: Benutzen Sie gerne die Leibnizsche Produktregel.
+      \begin{subsection}{Antwort}
+
+    \end{subsection}  
+\end{section}
+\end{document}

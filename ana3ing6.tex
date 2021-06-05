@@ -135,8 +135,29 @@ Wir verwenden $\cos(\phi)=\qty(\frac{1}{2}\qty(\mathrm{e}^{\imag \phi}+\mathrm{e
 \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_0^{2\pi}2\qty(\frac{1}{2}\qty(\mathrm{e}^{\imag \phi}+\mathrm{e}^{-\imag \phi})^2-1)\frac{- \imag 9 \mathrm{e}^{-\imag \phi}}{41-40 \qty(\frac{1}{2}\qty(\mathrm{e}^{\imag \phi}+\mathrm{e}^{-\imag \phi}))} \imag \mathrm{e}^{\imag \phi}\dd\phi \]
 \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\qty(\qty(z+z^{-1})^2-2)\frac{- \imag 9 z^{-1}}{41-20 \qty(\qty(z+z^{-1}))} \dd z \]
 \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\qty(\qty(z+z^{-1})^2-2)\frac{- \imag 9 z^{-1}}{41-20 \qty(z+z^{-1})} \dd z \]
-\[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\qty(\qty(z+z^{-1})^2-2)\frac{- \imag 9 z^{-1}}{41-20 \qty(z+z^{-1})} \dd z \]
+\[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\qty(z^2+\frac{1}{z^2})\frac{- \imag 9 z^{-1}}{41-20 \qty(z+z^{-1})} \dd z \]
+ \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\qty(z^2+\frac{1}{z^2})\frac{-\imag 9}{-20 z^2+41 z+20} \dd z \]
+ \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\frac{-\imag 9\qty(-z^4-1)}{z^2 \qty(20 z^2-41 z+20)} \dd z \]
+ \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\frac{-\imag 9\qty(-z^4-1)}{z^2 \qty(4z-5)\qty(5z-4)} \dd z \]
+ \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\frac{-\imag 9\qty(-z^4-1)}{\qty(z^2) 4\qty(z-\frac{5}{4})5\qty(z-\frac{4}{5})} \dd z \]
+ \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\frac{-\imag 9\qty(-z^4-1)}{20 \qty(z^2)\qty(z-\frac{5}{4})\qty(z-\frac{4}{5})} \dd z \]
+ \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\frac{\imag 9\qty(z^4+1)}{20 \qty(z^2)\qty(z-\frac{5}{4})\qty(z-\frac{4}{5})} \dd z \]
 \item[e)] 
+ \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\frac{\imag 9\qty(z^4+1)}{20}\qty(\frac{41}{20} \cdot \frac{1}{z}+\frac{1}{z^{2}}+\frac{64}{25} \cdot 
+\frac{1}{z-\frac{5}{4}}-\frac{125}{36} \cdot \frac{1}{z-\frac{4}{5}})  \dd z \]
+ \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\frac{\imag 9\qty(z^4+1)}{20}\qty(\frac{41}{20} \cdot \frac{1}{z}+\frac{1}{z^{2}}+\frac{64}{25} \cdot 
+\underbrace{\frac{1}{z-\frac{5}{4}}}_{\text{wird $0$}-\frac{125}{36} \cdot \frac{1}{z-\frac{4}{5}})  \dd z \]
+für $\frac{1}{z-\frac{5}{4}}$ Die Polstelle ist außerhalb der Einheitskreis, es ist $0$
+ \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\frac{\imag 9\qty(z^4+1)}{20}\qty(\frac{41}{20} \cdot \frac{1}{z}+\frac{1}{z^{2}}-\frac{125}{36} \cdot \frac{1}{z-\frac{4}{5}})  \dd z \]
+Wir verwenden die Cauchysche Integralformel
+\[f(z_0)=\frac{1}{2\pi \imag} \int_{\partial B}\frac{f(z)}{z-z_0}\dd z\]
+Unsere $f$ ist $f(z)=(z^4+1)$
+Daraus folgt:
+ \[u\qty(\frac{4}{5};0)=\cancel{\frac{1}{2\pi}} \qty(\frac{9 \imag}{20}) \cancel{2\pi} \imag \qty(-\frac{125}{36}f\qty(\frac{4}{5})+\frac{41}{20}f(0)+f'(0)) \]
+ \[u\qty(\frac{4}{5};0)= \qty(\frac{9 \imag}{20}) \imag \qty(-\frac{125}{36}\qty(\qty(\frac{4}{5})^4+1)+\frac{41}{20}) \]
+ \[u\qty(\frac{4}{5};0)=- \qty(\frac{9}{20})  \qty(-\frac{881}{180}+\frac{41}{20}) \]
+ \[u\qty(\frac{4}{5};0)=\frac{32}{25} \]
+
 \end{itemize}
     \end{subsection}  
 \end{section}

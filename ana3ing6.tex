@@ -114,10 +114,28 @@ Begründen Sie aber, warum Sie diese Identität benutzen. Der Rechenweg ist anso
 
       \begin{subsection}{Antwort}
 \begin{itemize}
-\item[a)] Sollen wir das mit Polarkoordinaten lösen oder Kartesisch? Was ist meine Ansatzfunktion..?
+\item[a)]
+wir nehmen die Folgende Ansatz 
+\[u\qty(x,y)=4x^2-2+A(x^2+y^2-1)\]
+wenn $A=-2$ ist dann $u(x,y)=2x^2-2y^2\implies \Delta u =0$
 \item[b)] 
+\[u(\frac{4}{5},0)=2\qty(\frac{4}{5})^2\] 
 \item[c)]  
+\[u\qty(r \mathrm{e}^{\imag \theta})=\frac{1}{2\pi}\int_0^{2\pi} u\qty(R \mathrm{e}^{\imag \phi}) \frac{R^2-r^2}{R^2 -2R r \cos(\theta-\phi)+r^2}\dd \phi. \]
+Unsere große Radius ist 1, kleine Radius und $\theta$ ist Betrag und Arg von $(\frac{4}{5},0)$. $\theta=0;r=\frac{4}{5}$
+\[u\qty(\frac{4}{5})=\frac{1}{2\pi}\int_0^{2\pi} u\qty(\mathrm{e}^{\imag \phi}) \frac{1-r^2}{1 -2 r \cos(-\phi)+r^2}\dd \phi. \]
+\[u\qty(\frac{4}{5})=\frac{1}{2\pi}\int_0^{2\pi} u\qty(\mathrm{e}^{\imag \phi}) \frac{1-\qty(\frac{4}{5})^2}{1 -2 \qty(\frac{4}{5})^2 \cos(-\phi)+\qty(\frac{4}{5})^2}\dd \phi. \]
+\[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_0^{2\pi}2\qty(\cos[2](\phi)-\sin[2](\phi))\frac{9}{41-40 \cos (\phi )}\dd\phi \]
+\[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_0^{2\pi}2\qty(\cos[2](\phi)-\sin[2](\phi))\frac{9}{41-40 \cos (\phi )} \dd\phi\]
+\[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_0^{2\pi}2\qty(2\cos[2](\phi)-1)\frac{9}{41-40 \cos (\phi )}\dd\phi \]
+
 \item[d)] 
+Wir verwenden $\cos(\phi)=\qty(\frac{1}{2}\qty(\mathrm{e}^{\imag \phi}+\mathrm{e}^{-\imag \phi}))$ 
+\[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_0^{2\pi}2\qty(2\qty(\frac{1}{2}\qty(\mathrm{e}^{\imag \phi}+\mathrm{e}^{-\imag \phi}))^2-1)\frac{- \imag 9 \mathrm{e}^{-\imag \phi}}{41-40 \qty(\frac{1}{2}\qty(\mathrm{e}^{\imag \phi}+\mathrm{e}^{-\imag \phi}))} \imag \mathrm{e}^{\imag \phi}\dd\phi \]
+\[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_0^{2\pi}2\qty(\frac{1}{2}\qty(\mathrm{e}^{\imag \phi}+\mathrm{e}^{-\imag \phi})^2-1)\frac{- \imag 9 \mathrm{e}^{-\imag \phi}}{41-40 \qty(\frac{1}{2}\qty(\mathrm{e}^{\imag \phi}+\mathrm{e}^{-\imag \phi}))} \imag \mathrm{e}^{\imag \phi}\dd\phi \]
+\[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\qty(\qty(z+z^{-1})^2-2)\frac{- \imag 9 z^{-1}}{41-20 \qty(\qty(z+z^{-1}))} \dd z \]
+\[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\qty(\qty(z+z^{-1})^2-2)\frac{- \imag 9 z^{-1}}{41-20 \qty(z+z^{-1})} \dd z \]
+\[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\qty(\qty(z+z^{-1})^2-2)\frac{- \imag 9 z^{-1}}{41-20 \qty(z+z^{-1})} \dd z \]
 \item[e)] 
 \end{itemize}
     \end{subsection}  

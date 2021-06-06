@@ -21,26 +21,64 @@ Mit Koeffizientenvergleich
 \[=\frac{1}{2}\frac{1}{1-\qty(-\qty((x-1)+\frac{1}{2}(x-1)^2))}\]
 Geometrische Reihenfolge:
 \[=\frac{1}{2}\sum_{n=0}^{\infty}\qty(-\qty((x-1)+\frac{1}{2}(x-1)^2))^n, \qty|-\qty((x-1)+\frac{1}{2}(x-1)^2)|<1\]
-
+Man kann sehr schwer die Koeffizienten der Laurent Reihe hier extrahieren.
 Wir verwenden andere Methode:
-\[\qty(\frac{1}{4}+\frac{\imag}{4})\qty(-\imag\qty(-\frac{1}{2}-\frac{\imag}{2})^n+\qty(-\frac{1}{2}+\frac{\imag}{2})^n)
-=\frac{1}{2\sqrt{2}}\ee^{\imag\frac{\pi}{4}}\qty(\ee^{\imag\frac{3\pi}{2}}\frac{1}{\sqrt{2}}\ee^{-\imag \frac{3\pi}{4}}+\ee^{\imag \frac{3\pi}{4}})\]
+\[\frac{1}{1+x^2}=\frac{1}{(x+\imag)(x-\imag)}=\frac{\imag}{2}\qty(-\frac{1}{x-\imag}+\frac{1}{x+\imag})\]
+\[a_n=\frac{1}{n!}\frac{\partial^n}{\partial x^n}\frac{\imag}{2}\qty(-\frac{1}{x-\imag}+\frac{1}{x+\imag})
+=\frac{\imag}{2}\qty(\qty(\frac{-1}{x-\imag})^{n+1}-(\frac{-1}{x+\imag})^{n+1})\mid_{x=1}\]
+\[=\frac{1}{2}\imag \qty(\qty(-\frac{1}{2}-\frac{\imag}{2})^{1+n}-\qty(-\frac{1}{2}+\frac{\imag}{2})^{1+n})\]
+\[=\qty(\frac{1}{4}+\frac{\imag}{4})\qty(-\imag\qty(-\frac{1}{2}-\frac{\imag}{2})^n+\qty(-\frac{1}{2}+\frac{\imag}{2})^n)
+=\frac{1}{2\sqrt{2}}\ee^{\imag\frac{\pi}{4}}\qty(\ee^{\imag\frac{3\pi}{2}}\qty(\frac{1}{\sqrt{2}}\ee^{-\imag \frac{3\pi}{4}})^n+\qty(\frac{1}{\sqrt{2}}\ee^{\imag \frac{3\pi}{4}})^n)\]
+\[=\qty(2^{-\qty(\frac{1}{2}+\frac{n}{2})})\frac{1}{2}\ee^{\imag\frac{\pi}{4}}\qty(\imag\qty(\ee^{-\imag \frac{3\pi}{4}})^n+\qty(\ee^{\imag \frac{3\pi}{4}})^n)\]
+\[=\qty(2^{-\qty(\frac{1}{2}+\frac{n}{2})})\frac{1}{2}\ee^{\imag\frac{\pi}{4}}(1-\imag)\qty(\cos(\frac{3 n \pi}{4})-\sin(\frac{3 n \pi}{4})))\]
+%\[=\frac{1}{2\sqrt{2}}\ee^{\imag\frac{\pi}{4}}\qty(\ee^{\imag\frac{3\pi}{2}}\qty(\ee^{-\imag \frac{3\pi}{4}})^n+\qty(\ee^{\imag \frac{3\pi}{4}})^n)\]
+%\[=\frac{1}{2\sqrt{2}}\ee^{\imag\frac{\pi}{4}}\qty(\ee^{\imag\frac{3\pi}{2}}\ee^{-n \imag \frac{3\pi}{4}}+\ee^{n\imag \frac{3\pi}{4}})\]
+
 \[=\qty(2^{-\qty(1+\frac{n}{2})}\qty(\cos(\frac{3 n \pi}{4})-\sin(\frac{3 n \pi}{4})))\]
 \[\sum_{n=0}^{\infty}\qty(2^{-\qty(1+\frac{n}{2})}\qty(\cos(\frac{3 n \pi}{4})-\sin(\frac{3 n \pi}{4})))(x-1)^n\]
-und ihre Konvergenzradius ist $\sqrt{2}$
+und ihre Konvergenzradius ist $\sqrt{2}$ Denn $\pm \imag$ sind die Polstellen.
 
 \end{subsection}
 \end{section}
 \begin{section}{Aufgabe}%2
     Entwickeln Sie die Funktion \( \log z \) in eine Potenzreihe mit dem Entwicklungspunkt $\imag$. (Vergessen Sie nicht, den Konvergenzbereich anzugeben. Ermitteln Sie den Wert der Reihe \[ \sum_{n=1} \frac{\imag^{n}}{n} \] 
     \begin{subsection}{Antwort}
- 
+        \[a_n=\frac{1}{n!}\frac{\partial^n}{\partial x^n}\log(z)\] für $n>0$
+        und $a_0=\log(\imag)=\frac{\imag \pi}{2}$
+        \[=-\frac{1}{n}\qty(\frac{-1}{z})^n\]
+        für $z=\imag$
+        \[=-\frac{\imag^n}{n}\]
+        die Potenzreihe ist
+        \[\frac{\imag \pi}{2}-\sum_{n=1}^\infty\frac{\imag^{n}}{n}(z-\imag)^n \] für $|z|<1$ wegen der Polstelle am $0$.
+        für $z=1+\imag$
+        \[\log(1+\imag)=\frac{\imag \pi}{2}-\sum_{n=1}^\infty\frac{\imag^{n}}{n}(1)^n\]
+        \[\sum_{n=1}^\infty\frac{\imag^{n}}{n}(1)^n=\frac{\imag \pi}{2}-\log(1+\imag)\]
+        \[\sum_{n=1}^\infty\frac{\imag^{n}}{n}=\log(\imag)-\log(1+\imag)\]
+        \[\sum_{n=1}^\infty\frac{\imag^{n}}{n}=\log(\frac{\imag}{1+\imag})\]
+        \[\sum_{n=1}^\infty\frac{\imag^{n}}{n}=-\log(1-\imag)\]
     \end{subsection}
 \end{section}
 \begin{section}{Aufgabe}
     Berechnen Sie die Integrale \[ \text { a) } \int_{|z-1|=2} \frac{\mathrm{e}^{\imag \pi z}}{(z-1)^{4}} \dd z, \quad \text { b) } \quad \int_{|z-\pi|=1} \frac{z^{4} \sin z}{(z-\pi)^{6}} \dd z \] Tipp: Benutzen Sie gerne die Leibnizsche Produktregel.
       \begin{subsection}{Antwort}
-
+        für a:
+        \[\int_{|z-1|=2} \frac{\mathrm{e}^{\imag \pi z}}{(z-1)^{4}} \dd z=\frac{2 \pi \imag}{3!}f^{(3)}(1) \]
+        für $f(z)=\ee^{\imag \pi z}$.
+        Daraus folgt: \[f'''(z)=(\imag\pi)^3\ee^{\imag \pi z}\]
+        Also die Integral ausgewertet 
+        \[\int_{|z-1|=2} \frac{\mathrm{e}^{\imag \pi z}}{(z-1)^{4}} \dd z=\frac{2 \pi^4}{3!}\]
+        für b
+        \[\int_{|z-\pi|=1} \frac{z^{4} \sin z}{(z-\pi)^{6}} \dd z=\frac{2 \pi \imag}{5!}f^{(5)}(\pi) \]
+        für $f(z)=z^4 \sin{z}$.
+        \[f'(z)=z^4 \sin{z}=z^4 \cos (z)+4 z^3 \sin (z)\]
+        \[f''(z)=z^4 (-\sin (z))+8 z^3 \cos (z)+12 z^2 \sin (z)\]
+        \[f'''(z)=z^4 (-\cos (z))-12 z^3 \sin (z)+36 z^2 \cos (z)+24 z \sin (z)\]
+        \[f''''(z)=z^4 \sin (z)-16 z^3 \cos (z)-72 z^2 \sin (z)+24 \sin (z)+96 z \cos (z)\]
+        \[f'''''(z)=z^4 \cos (z)+20 z^3 \sin (z)-120 z^2 \cos (z)-240 z \sin (z)+120 \cos (z)
+        =20 z \qty(z^2-12) \sin (z)+\qty(z^4-120 z^2+120) \cos (z)\]
+        \[f^{(5)}(\pi)=-\pi ^4+120 \pi ^2-120\]
+        Die Integral entspricht:
+        \[\frac{2 \pi \imag}{5!}\qty(=-\pi ^4+120 \pi ^2-120)\]
     \end{subsection}  
 \end{section}
 \end{document}

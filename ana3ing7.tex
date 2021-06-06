@@ -1,6 +1,7 @@
 \documentclass{scrartcl}
 \def\wochenumber{7}
 \input{preamble}
+
 \begin{document}
 \maketitle
 %\author
@@ -9,13 +10,25 @@
  
 \begin{subsection}{Antwort}
 Wir haben
-\[\frac{1}{1+x^2}=\frac{1}{1-(-x^2)}=\sum_{n=0}^\infty (-x^{2n}), \abs{-x^2}<1,\] aber dann ist die Entwicklungspunkt 0, wir wollen unsere "Polynom-Basis" von $x$ zu $x-1$ wechseln.
+\[\frac{1}{1+x^2}=\frac{1}{1-(-x^2)}=\sum_{n=0}^\infty (-x^{2n}), \abs{-x^2}<1,\] aber dann ist die Entwicklungspunkt 0, wi wollen unsere "Polynom-Basis" von $x$ zu $x-1$ wechseln.
+Die Singularität ist $x=\pm \imag$
 
 \[x^2+1=a (x-1)^2+b(x-1)+c = a x^2-2ax+a+bx-b+c\]
 Mit Koeffizientenvergleich
 \[a=1;-2+b=0\>b=2;1-2+c=1\>c=2\]
 
-\[\frac{1}{1+x^2}=\frac{1}{2+2(x-1)+(x-1)^2}\]
+\[\frac{1}{1+x^2}=\frac{1}{2+2(x-1)+(x-1)^2}=\frac{1}{2}\frac{1}{1+(x-1)+\frac{1}{2}(x-1)^2}\]
+\[=\frac{1}{2}\frac{1}{1-\qty(-\qty((x-1)+\frac{1}{2}(x-1)^2))}\]
+Geometrische Reihenfolge:
+\[=\frac{1}{2}\sum_{n=0}^{\infty}\qty(-\qty((x-1)+\frac{1}{2}(x-1)^2))^n, \qty|-\qty((x-1)+\frac{1}{2}(x-1)^2)|<1\]
+
+Wir verwenden andere Methode:
+\[\qty(\frac{1}{4}+\frac{\imag}{4})\qty(-\imag\qty(-\frac{1}{2}-\frac{\imag}{2})^n+\qty(-\frac{1}{2}+\frac{\imag}{2})^n)
+=\frac{1}{2\sqrt{2}}\ee^{\imag\frac{\pi}{4}}\qty(\ee^{\imag\frac{3\pi}{2}}\frac{1}{\sqrt{2}}\ee^{-\imag \frac{3\pi}{4}}+\ee^{\imag \frac{3\pi}{4}})\]
+\[=\qty(2^{-\qty(1+\frac{n}{2})}\qty(\cos(\frac{3 n \pi}{4})-\sin(\frac{3 n \pi}{4})))\]
+\[\sum_{n=0}^{\infty}\qty(2^{-\qty(1+\frac{n}{2})}\qty(\cos(\frac{3 n \pi}{4})-\sin(\frac{3 n \pi}{4})))(x-1)^n\]
+und ihre Konvergenzradius ist $\sqrt{2}$
+
 \end{subsection}
 \end{section}
 \begin{section}{Aufgabe}%2

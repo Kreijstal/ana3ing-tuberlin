@@ -106,12 +106,10 @@ Auf einer gewissen Kreisscheibe im \( \mathbb{R}^{2} \) sei das Randwertproblem 
 \item[b)] (Methode \enquote{direkt}:) Bestimmen Sie anhand der in a) erhaltenen Lösung \( u \) den Wert \( u\left(\frac{4}{5}, 0\right) \). 
 \item[c)] Stellen Sie die Poissonsche Integralformel zur Berechnung des Werts \( u\left(\frac{4}{5}, 0\right) \) auf (ähnlich wie in einer Tutoriumsaufgabe) 
 \item[d)] Schreiben Sie das Integral in Ihrer Integralformel in ein komplexes Integral über den Einheitskreis \( |z|=1 \) um (ähnlich wie in einer Tutoriumsaufgabe) 
-\item[e)]  Werten Sie Ihr komplexes Integral mit Hilfe der Cauchyschen Integralsätze und Ergebnissen aus der Vorlesung aus. (Methode, \enquote{Poissonsche Integralformel}) Hierbei dürfen Sie ohne Nachweis folgende Partialbruchzerlegung benutzen: \[ \frac{1}{z^{2}\left(z-\frac{4}{5}\right)\left(z+\frac{5}{4}\right)}=\frac{41}{20} \cdot \frac{1}{z}+\frac{1}{z^{2}}+\frac{64}{25} \cdot 
-\frac{1}{z-\frac{5}{4}}-\frac{125}{36} \cdot \frac{1}{z-\frac{4}{5}}\]
+\item[e)]  Werten Sie Ihr komplexes Integral mit Hilfe der Cauchyschen Integralsätze und Ergebnissen aus der Vorlesung aus. (Methode, \enquote{Poissonsche Integralformel}) Hierbei dürfen Sie ohne Nachweis folgende Partialbruchzerlegung benutzen: 
+\[\frac{1}{z^{2}\left(z-\frac{4}{5}\right)\left(z+\frac{5}{4}\right)}=\frac{41}{20} \cdot \frac{1}{z}+\frac{1}{z^{2}}+\frac{64}{25} \cdot \frac{1}{z-\frac{5}{4}}-\frac{125}{36} \cdot \frac{1}{z-\frac{4}{5}}\]
 Begründen Sie aber, warum Sie diese Identität benutzen. Der Rechenweg ist ansonsten (wie immer) vollständig darzustellen.
 \end{itemize}
-
-
       \begin{subsection}{Antwort}
 \begin{itemize}
 \item[a)]
@@ -143,10 +141,8 @@ Wir verwenden $\cos(\phi)=\qty(\frac{1}{2}\qty(\mathrm{e}^{\imag \phi}+\mathrm{e
  \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\frac{-\imag 9\qty(-z^4-1)}{20 \qty(z^2)\qty(z-\frac{5}{4})\qty(z-\frac{4}{5})} \dd z \]
  \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\frac{\imag 9\qty(z^4+1)}{20 \qty(z^2)\qty(z-\frac{5}{4})\qty(z-\frac{4}{5})} \dd z \]
 \item[e)] 
- \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\frac{\imag 9\qty(z^4+1)}{20}\qty(\frac{41}{20} \cdot \frac{1}{z}+\frac{1}{z^{2}}+\frac{64}{25} \cdot 
-\frac{1}{z-\frac{5}{4}}-\frac{125}{36} \cdot \frac{1}{z-\frac{4}{5}})  \dd z \]
- \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\frac{\imag 9\qty(z^4+1)}{20}\qty(\frac{41}{20} \cdot \frac{1}{z}+\frac{1}{z^{2}}+\frac{64}{25} \cdot 
-\underbrace{\frac{1}{z-\frac{5}{4}}}_{\text{wird $0$}-\frac{125}{36} \cdot \frac{1}{z-\frac{4}{5}})  \dd z \]
+\[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\frac{\imag 9\qty(z^4+1)}{20}\qty(\frac{41}{20} \cdot \frac{1}{z}+\frac{1}{z^{2}}+\frac{64}{25} \cdot \frac{1}{z-\frac{5}{4}}-\frac{125}{36} \cdot \frac{1}{z-\frac{4}{5}})  \dd z \]
+ \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\frac{\imag 9\qty(z^4+1)}{20}\qty(\frac{41}{20} \cdot \frac{1}{z}+\frac{1}{z^{2}}+\frac{64}{25} \cdot \underbrace{\frac{1}{z-\frac{5}{4}}}_{\text{wird $0$}}-\frac{125}{36} \cdot \frac{1}{z-\frac{4}{5}})  \dd z \]
 für $\frac{1}{z-\frac{5}{4}}$ Die Polstelle ist außerhalb der Einheitskreis, es ist $0$
  \[u\qty(\frac{4}{5};0)=\frac{1}{2\pi}\int_{\qty|z|=1}\frac{\imag 9\qty(z^4+1)}{20}\qty(\frac{41}{20} \cdot \frac{1}{z}+\frac{1}{z^{2}}-\frac{125}{36} \cdot \frac{1}{z-\frac{4}{5}})  \dd z \]
 Wir verwenden die Cauchysche Integralformel
